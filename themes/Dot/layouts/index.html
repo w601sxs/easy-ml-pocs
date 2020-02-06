@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+  {{ "<!-- topics -->" | safeHTML }}
+  <section class="section bg-gray">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <h2 class="section-title">{{ i18n "topics_title" | safeHTML }}</h2>
+        </div>
+        {{ "<!-- topic-item -->" | safeHTML }}
+        {{ range (where .Site.Pages "Type" "docs") }}
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <a href="{{ .Permalink }}" class="px-4 py-5 bg-white shadow text-center d-block match-height">
+            <i class="{{ .Params.Icon }} icon text-primary d-block mb-4"></i>
+            <h3 class="mb-3 mt-0">{{ .Title }}</h3>
+            <p class="mb-0">{{ .Params.Description }}</p>
+          </a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ "<!-- /topics -->" | safeHTML }}
+
+  {{ if .Site.Params.cta.enable }}
+  {{ "<!-- call to action -->" | safeHTML }}
+  <section class="bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section bg-white shadow text-center">
+          {{ with .Site.Params.cta.title }}<h2 class="mb-4">{{ . }}</h2>{{ end }}
+          {{ with .Site.Params.cta.description }}<p class="mb-4">{{ . }}</p>{{ end }}
+          {{ if .Site.Params.cta.button.enable }}
+          <a href="{{ .Site.Params.cta.button.link | relLangURL }}" class="btn btn-primary">{{ .Site.Params.cta.button.label}}</a>
+          {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ "<!-- /call to action -->" | safeHTML }}
+  {{ end }}
+
+{{ end }}
