@@ -8,6 +8,13 @@ title = "Easy ML PoCs"
 # desable language
 disableLanguages = []
 
+# Syntax highlighting
+
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsStyle = "fruity"
+
 ############################# Default Parameters ##########################
 [params]
 # logo is for all pages
@@ -130,6 +137,8 @@ description = "Contribute an answer or contact us for help."
 enable = true
 label = "contact us"
 link = "contact"
+
+
 
 
 

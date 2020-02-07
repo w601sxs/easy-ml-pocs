@@ -18,3 +18,11 @@ Then, create content pages inside the previously created chapter. Here are two w
 
 
 `hugo new preprocessing/personalize/_index.md'
+
+## Syntax-highlighting code blocks
+
+Insert code samples in a `{{< highlight >}}' block as shown below:
+
+`{{< highlight python >}}
+// INSERT CODE HERE
+{{< /highlight >}}''
