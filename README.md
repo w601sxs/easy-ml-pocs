@@ -12,12 +12,13 @@ Then, create content pages inside the previously created chapter. Here are two w
 
 ## If you want to contribute code:
 
-1. Fork this repository or ask for access (this is better)
-1. Select between preprocessing, training and inference
-1. based on your selection above, create a new index file under this chapter and edit away. For example, to create a new preprocessing sub-chapter for personalize, do:
-
+1. Ask for access and clone repo
+2. Select between preprocessing, training and inference
+3. based on your selection above, create a new index file under this chapter and edit away. For example, to create a new preprocessing sub-chapter for personalize, do:
 
 `hugo new preprocessing/personalize/_index.md'
+
+4. Push update and wait for build
 
 ## Syntax-highlighting code blocks
 
