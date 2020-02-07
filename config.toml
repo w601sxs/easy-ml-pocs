@@ -8,12 +8,18 @@ title = "Easy ML PoCs"
 # desable language
 disableLanguages = []
 
-# Syntax highlighting
 
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-pygmentsStyle = "fruity"
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
 
 ############################# Default Parameters ##########################
 [params]
