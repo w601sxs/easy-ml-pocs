@@ -1,6 +1,6 @@
 ################################# Default configuration ###################
 # provide your domain here
-baseURL = "https://examplesite.com/"
+baseURL = "https://master.d2ifucdfz09ieg.amplifyapp.com/"
 # theme
 theme = "Dot"
 # site title
