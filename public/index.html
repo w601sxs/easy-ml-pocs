@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+  <title>Easy ML PoCs</title>
+
+  <meta name="generator" content="Hugo 0.64.0" />
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://examplesite.com/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://examplesite.com/plugins/themify-icons/themify-icons.css">
+
+  <!-- highlight -->
+  <link rel="stylesheet" href="https://examplesite.com/plugins/highlight/hybrid.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://examplesite.com/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  
+  <style>
+  :root{
+    --primary-color:#02007e;
+    --secondary-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link rel="stylesheet" href="https://examplesite.com/css/style.min.css" media="screen">
+
+<!-- jquiry -->
+<script src="https://examplesite.com/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://examplesite.com/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://examplesite.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://examplesite.com/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://examplesite.com/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+  
+  <!-- header -->
+  <header class="hero-section overlay bg-cover banner" data-background="https://examplesite.com/images/banner.jpg">
+    <div class="container mb-100">
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-md navbar-dark">
+  <a class="navbar-brand" href="/">
+    
+    
+    
+    Easy ML PoCs
+    
+  </a>
+  <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse text-center" id="navigation">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/">Home</a>
+      </li>
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/faq">Faq</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/contact">contact</a>
+      </li>
+      
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          docs
+        </a>
+        <div class="dropdown-menu">
+          
+          <a class="dropdown-item" href="/installation">Installation</a>
+          
+          <a class="dropdown-item" href="/billing-pricing">Billing and Pricing</a>
+          
+          <a class="dropdown-item" href="/features">Features</a>
+          
+        </div>
+      </li>
+      
+      
+    </ul>
+    
+    <select class="lang-list " id="select-language" onchange="location = this.value;">
+      
+      
+      
+      
+      
+      
+      
+      
+      <option id="en" value="https://examplesite.com/" selected>En
+      </option>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <option id="fr" value="https://examplesite.com/fr/">Fr</option>
+      
+      
+      
+      
+    </select>
+    
+  </div>
+</nav>
+      <!-- /navigation -->
+    </div>
+    <!-- banner -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 text-center mx-auto">
+			<h1 class="text-white mb-3">Support Center &amp; Knowledge base</h1>
+			<p class="text-white mb-4">Find advice and answers from our support team fast or get in touch</p>
+			<div class="position-relative">
+				<input id="search" class="form-control" placeholder="Have a question? Just ask here or enter terms">
+
+				
+				
+				
+				
+				<script>
+					$(function() {
+					var projects = [
+						
+						{
+							value: "Customer instructions for change of ownership",
+							label: "Customer instructions for change of ownership",
+							url:"https:\/\/examplesite.com\/billing-pricing\/ownership\/"
+						},
+						
+						{
+							value: "Linux",
+							label: "Linux",
+							url:"https:\/\/examplesite.com\/features\/linux\/"
+						},
+						
+						{
+							value: "Requirments",
+							label: "Requirments",
+							url:"https:\/\/examplesite.com\/installation\/requirments\/"
+						},
+						
+						{
+							value: "Installation",
+							label: "Installation",
+							url:"https:\/\/examplesite.com\/installation\/install\/"
+						},
+						
+						{
+							value: "Mac OS",
+							label: "Mac OS",
+							url:"https:\/\/examplesite.com\/features\/mac\/"
+						},
+						
+						{
+							value: "Manage My Sprint account",
+							label: "Manage My Sprint account",
+							url:"https:\/\/examplesite.com\/billing-pricing\/manage\/"
+						},
+						
+						{
+							value: "Configuration",
+							label: "Configuration",
+							url:"https:\/\/examplesite.com\/installation\/configuration\/"
+						},
+						
+						{
+							value: "How to pay your bill",
+							label: "How to pay your bill",
+							url:"https:\/\/examplesite.com\/billing-pricing\/bill\/"
+						},
+						
+						{
+							value: "Routing",
+							label: "Routing",
+							url:"https:\/\/examplesite.com\/features\/routing\/"
+						},
+						
+						{
+							value: "Customization",
+							label: "Customization",
+							url:"https:\/\/examplesite.com\/installation\/customization\/"
+						},
+						
+						{
+							value: "Payment arrangements",
+							label: "Payment arrangements",
+							url:"https:\/\/examplesite.com\/billing-pricing\/payment\/"
+						},
+						
+						{
+							value: "Ubuntu",
+							label: "Ubuntu",
+							url:"https:\/\/examplesite.com\/features\/ubuntu\/"
+						},
+						
+						{
+							value: "Elements",
+							label: "Elements",
+							url:"https:\/\/examplesite.com\/installation\/elements\/"
+						},
+						
+						{
+							value: "Understand the different levels of profile",
+							label: "Understand the different levels of profile",
+							url:"https:\/\/examplesite.com\/billing-pricing\/profile\/"
+						},
+						
+						{
+							value: "Windows",
+							label: "Windows",
+							url:"https:\/\/examplesite.com\/features\/windows\/"
+						},
+						
+						{
+							value: "Installation",
+							label: "Installation",
+							url:"https:\/\/examplesite.com\/installation\/"
+						},
+						
+						{
+							value: "Billing \x26 Pricing",
+							label: "Billing \x26 Pricing",
+							url:"https:\/\/examplesite.com\/billing-pricing\/"
+						},
+						
+						{
+							value: "Features",
+							label: "Features",
+							url:"https:\/\/examplesite.com\/features\/"
+						},
+						
+						{
+							value: "Categories",
+							label: "Categories",
+							url:"https:\/\/examplesite.com\/categories\/"
+						},
+						
+						{
+							value: "Easy ML PoCs",
+							label: "Easy ML PoCs",
+							url:"https:\/\/examplesite.com\/"
+						},
+						
+						{
+							value: "Frequently Asked Questions",
+							label: "Frequently Asked Questions",
+							url:"https:\/\/examplesite.com\/faq\/"
+						},
+						
+						{
+							value: "Got Any Questions",
+							label: "Got Any Questions",
+							url:"https:\/\/examplesite.com\/contact\/"
+						},
+						
+						{
+							value: "Tags",
+							label: "Tags",
+							url:"https:\/\/examplesite.com\/tags\/"
+						},
+						
+					];
+					$( "#search" ).autocomplete({
+							minLength: 0,
+							source: projects,
+							focus: function( event, ui ) {
+								$( "#search" ).val( ui.item.label );
+								return false;
+							},
+							select: function( event, ui ) {
+								$( "#search" ).val( ui.item.label );
+								$( "#project-id" ).val( ui.item.value );
+								return false;
+							}
+					})
+					.data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+						return $( "<li>" )
+						.append( "<a href=" + item.url + " + \" &quot;\" +  >" + item.label + "</a>" )
+						.appendTo( ul );
+					};
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /banner -->
+  </header>
+  <!-- /header -->
+  
+  <div id="content">
+
+  <!-- topics -->
+  <section class="section bg-gray">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <h2 class="section-title">Find your answer by subject</h2>
+        </div>
+        <!-- topic-item -->
+        
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <a href="https://examplesite.com/installation/" class="px-4 py-5 bg-white shadow text-center d-block match-height">
+            <i class="ti-panel icon text-primary d-block mb-4"></i>
+            <h3 class="mb-3 mt-0">Installation</h3>
+            <p class="mb-0">Lorem ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet</p>
+          </a>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <a href="https://examplesite.com/billing-pricing/" class="px-4 py-5 bg-white shadow text-center d-block match-height">
+            <i class="ti-credit-card icon text-primary d-block mb-4"></i>
+            <h3 class="mb-3 mt-0">Billing &amp; Pricing</h3>
+            <p class="mb-0">Lorem ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet</p>
+          </a>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <a href="https://examplesite.com/features/" class="px-4 py-5 bg-white shadow text-center d-block match-height">
+            <i class="ti-package icon text-primary d-block mb-4"></i>
+            <h3 class="mb-3 mt-0">Features</h3>
+            <p class="mb-0">Lorem ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet</p>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <!-- /topics -->
+
+  
+  <!-- call to action -->
+  <section class="bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section bg-white shadow text-center">
+          <h2 class="mb-4">Didn&#39;t find an answer to your question?</h2>
+          <p class="mb-4">Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam.</p>
+          
+          <a href="/contact" class="btn btn-primary">contact us</a>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /call to action -->
+  
+
+
+  </div><!-- footer -->
+<footer class="section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-md-left text-center">
+       <p>The Hugo Documents are copyright © <a href="https://gethugothemes.com/">gethugothemes</a> 2020.</p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline mb-3">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-facebook"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-vimeo-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-linkedin"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://examplesite.com/js/script.min.js"></script></body>
+
+</html>
