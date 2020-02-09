@@ -1,5 +1,5 @@
 # easy-ml-pocs
-Site for searching for reusable code samples
+Site for organizing and searching for reusable code samples related to building ML PoCs on AWS.
 
 ## Add useful examples and organize within chapters
 Then, create content pages inside the previously created chapter. Here are two ways to create content in a chapter with this hugo template:
