@@ -1,11 +1,12 @@
 ---
-title: "Xgboost"
+title: "Xgboost preprocessing"
 date: 2020-02-07T00:15:15-05:00
 draft: false
 ---
 
 
-# Using python
+## Pre-reqs
+Make sure you have a CSV file with the column you want to predict along with other data columns or features, call it 'file.csv'
 
 ## Make some necessary imports
 
@@ -15,6 +16,11 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 import pandas as pd
 import numpy as np
+```
+
+## Read data using pandas
+```python
+data = pd.read_csv('file.csv')
 ```
 
 ## Choose the column you want to predict
