@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+  <title>Easy ML PoCs</title>
+
+  <meta name="generator" content="Hugo 0.64.0" />
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/themify-icons/themify-icons.css">
+
+  <!-- highlight -->
+  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/highlight/hybrid.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://master.d2ifucdfz09ieg.amplifyapp.com/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  
+  <style>
+  :root{
+    --primary-color:#02007e;
+    --secondary-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/css/style.min.css" media="screen">
+
+<!-- jquiry -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+  
+  <!-- header -->
+  <header class="hero-section overlay bg-cover banner" data-background="https://master.d2ifucdfz09ieg.amplifyapp.com/images/banner.jpg">
+    <div class="container mb-100">
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-md navbar-dark">
+  <a class="navbar-brand" href="/">
+    
+    
+    
+    Easy ML PoCs
+    
+  </a>
+  <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse text-center" id="navigation">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/">Home</a>
+      </li>
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          code
+        </a>
+        <div class="dropdown-menu">
+          
+          <a class="dropdown-item" href="/preprocessing">Preprocessing</a>
+          
+          <a class="dropdown-item" href="/training">Training</a>
+          
+          <a class="dropdown-item" href="/inference">Inference</a>
+          
+        </div>
+      </li>
+      
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          docs
+        </a>
+        <div class="dropdown-menu">
+          
+          <a class="dropdown-item" href="/installation">Installation</a>
+          
+          <a class="dropdown-item" href="/billing-pricing">Billing and Pricing</a>
+          
+          <a class="dropdown-item" href="/features">Features</a>
+          
+        </div>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/faq">Faq</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/contact">contact</a>
+      </li>
+      
+      
+    </ul>
+    
+  </div>
+</nav>
+      <!-- /navigation -->
+    </div>
+    <!-- banner -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 text-center mx-auto">
+			<h1 class="text-white mb-3">How do I ...</h1>
+			<p class="text-white mb-4">Find code snippets you can use to build out your ML PoCs step-by-step</p>
+			<div class="position-relative">
+				<input id="search" class="form-control" placeholder="Just ask here or enter terms">
+
+				
+				
+				
+				
+				<script>
+					$(function() {
+					var projects = [
+						
+						{
+							value: "Customer instructions for change of ownership",
+							label: "Customer instructions for change of ownership",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/billing-pricing\/ownership\/"
+						},
+						
+						{
+							value: "Linux",
+							label: "Linux",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/features\/linux\/"
+						},
+						
+						{
+							value: "Requirments",
+							label: "Requirments",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/installation\/requirments\/"
+						},
+						
+						{
+							value: "Installation",
+							label: "Installation",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/installation\/install\/"
+						},
+						
+						{
+							value: "Mac OS",
+							label: "Mac OS",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/features\/mac\/"
+						},
+						
+						{
+							value: "Manage My Sprint account",
+							label: "Manage My Sprint account",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/billing-pricing\/manage\/"
+						},
+						
+						{
+							value: "Configuration",
+							label: "Configuration",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/installation\/configuration\/"
+						},
+						
+						{
+							value: "How to pay your bill",
+							label: "How to pay your bill",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/billing-pricing\/bill\/"
+						},
+						
+						{
+							value: "Routing",
+							label: "Routing",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/features\/routing\/"
+						},
+						
+						{
+							value: "Customization",
+							label: "Customization",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/installation\/customization\/"
+						},
+						
+						{
+							value: "Payment arrangements",
+							label: "Payment arrangements",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/billing-pricing\/payment\/"
+						},
+						
+						{
+							value: "Ubuntu",
+							label: "Ubuntu",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/features\/ubuntu\/"
+						},
+						
+						{
+							value: "Elements",
+							label: "Elements",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/installation\/elements\/"
+						},
+						
+						{
+							value: "Understand the different levels of profile",
+							label: "Understand the different levels of profile",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/billing-pricing\/profile\/"
+						},
+						
+						{
+							value: "Windows",
+							label: "Windows",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/features\/windows\/"
+						},
+						
+						{
+							value: "Upload to s3",
+							label: "Upload to s3",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/preprocessing\/uploadtos3\/"
+						},
+						
+						{
+							value: "Personalize",
+							label: "Personalize",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/preprocessing\/personalize\/"
+						},
+						
+						{
+							value: "Forecast",
+							label: "Forecast",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/preprocessing\/forecast\/"
+						},
+						
+						{
+							value: "Automl",
+							label: "Automl",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/preprocessing\/automl\/"
+						},
+						
+						{
+							value: "Xgboost",
+							label: "Xgboost",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/preprocessing\/xgboost\/"
+						},
+						
+						{
+							value: "Blazingtext",
+							label: "Blazingtext",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/preprocessing\/blazingtext\/"
+						},
+						
+						{
+							value: "Comprehend",
+							label: "Comprehend",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/preprocessing\/comprehend\/"
+						},
+						
+						{
+							value: "Inference",
+							label: "Inference",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/inference\/"
+						},
+						
+						{
+							value: "Preprocessing",
+							label: "Preprocessing",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/preprocessing\/"
+						},
+						
+						{
+							value: "Training",
+							label: "Training",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/training\/"
+						},
+						
+						{
+							value: "Installation",
+							label: "Installation",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/installation\/"
+						},
+						
+						{
+							value: "Billing \x26 Pricing",
+							label: "Billing \x26 Pricing",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/billing-pricing\/"
+						},
+						
+						{
+							value: "Features",
+							label: "Features",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/features\/"
+						},
+						
+						{
+							value: "Categories",
+							label: "Categories",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/categories\/"
+						},
+						
+						{
+							value: "Easy ML PoCs",
+							label: "Easy ML PoCs",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/"
+						},
+						
+						{
+							value: "Frequently Asked Questions",
+							label: "Frequently Asked Questions",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/faq\/"
+						},
+						
+						{
+							value: "Got Any Questions",
+							label: "Got Any Questions",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/contact\/"
+						},
+						
+						{
+							value: "Tags",
+							label: "Tags",
+							url:"https:\/\/master.d2ifucdfz09ieg.amplifyapp.com\/tags\/"
+						},
+						
+					];
+					$( "#search" ).autocomplete({
+							minLength: 0,
+							source: projects,
+							focus: function( event, ui ) {
+								$( "#search" ).val( ui.item.label );
+								return false;
+							},
+							select: function( event, ui ) {
+								$( "#search" ).val( ui.item.label );
+								$( "#project-id" ).val( ui.item.value );
+								return false;
+							}
+					})
+					.data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+						return $( "<li>" )
+						.append( "<a href=" + item.url + " + \" &quot;\" +  >" + item.label + "</a>" )
+						.appendTo( ul );
+					};
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /banner -->
+  </header>
+  <!-- /header -->
+  
+  <div id="content">
+
+  <!-- topics -->
+  <section class="section bg-gray">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <h2 class="section-title">Find your answer by subject</h2>
+        </div>
+        <!-- topic-item -->
+        
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/" class="px-4 py-5 bg-white shadow text-center d-block match-height">
+            <i class="ti-direction-alt icon text-primary d-block mb-4"></i>
+            <h3 class="mb-3 mt-0">Inference</h3>
+            <p class="mb-0">Code related to real-time or batch inferences</p>
+          </a>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/" class="px-4 py-5 bg-white shadow text-center d-block match-height">
+            <i class="ti-shift-right icon text-primary d-block mb-4"></i>
+            <h3 class="mb-3 mt-0">Preprocessing</h3>
+            <p class="mb-0">Code related to preprocessing data for ML tasks</p>
+          </a>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/" class="px-4 py-5 bg-white shadow text-center d-block match-height">
+            <i class="ti-dashboard icon text-primary d-block mb-4"></i>
+            <h3 class="mb-3 mt-0">Training</h3>
+            <p class="mb-0">Code related to training ML models</p>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <!-- /topics -->
+
+  
+  <!-- call to action -->
+  <section class="bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section bg-white shadow text-center">
+          <h2 class="mb-4">Didn&#39;t find an answer to your question?</h2>
+          <p class="mb-4">Contribute an answer or contact us for help.</p>
+          
+          <a href="/contact" class="btn btn-primary">contact us</a>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /call to action -->
+  
+
+
+  </div><!-- footer -->
+<footer class="section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-md-left text-center">
+       <p>Documents are copyright © AWS 2020.</p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline mb-3">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-facebook"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-vimeo-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-linkedin"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/js/script.min.js"></script></body>
+
+</html>
