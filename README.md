@@ -25,8 +25,17 @@ Then, create content pages inside the previously created chapter. Here are two w
 Insert code samples in a `{{< highlight >}}' block as shown below:
 
 `{{< highlight python >}}
-// INSERT CODE HERE
+# INSERT CODE HERE
 {{< /highlight >}}''
+
+<br>
+This gives you some more control like highlighting lines within an included code block.
+
+Alternatively, use the simple git syntax
+
+```python
+# INSERT CODE HERE
+``` 
 
 ## Remember to remove draft mode
 On the page you edited, mark draft: false (will be true by default)
