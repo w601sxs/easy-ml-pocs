@@ -27,3 +27,6 @@ Insert code samples in a `{{< highlight >}}' block as shown below:
 `{{< highlight python >}}
 // INSERT CODE HERE
 {{< /highlight >}}''
+
+## Remember to remove draft mode
+On the page you edited, mark draft: false (will be true by default)
