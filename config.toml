@@ -40,7 +40,7 @@ white_color = "#ffffff"
 font_family = "lato" # Choose font family from : https://fonts.google.com/
 
 # contact form action
-contact_form_action = "https://formspree.io/shreyas.f117@gmail.com" method="POST"
+contact_form_action = "https://formspree.io/shreyas.f117@gmail.com" # method="POST""
 
 # contact form works with : https://formspree.io
 
