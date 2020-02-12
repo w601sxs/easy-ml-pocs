@@ -40,7 +40,9 @@ white_color = "#ffffff"
 font_family = "lato" # Choose font family from : https://fonts.google.com/
 
 # contact form action
-contact_form_action = "https://formspree.io/shreyas.f117@gmail.com" # contact form works with : https://formspree.io
+contact_form_action = "https://formspree.io/shreyas.f117@gmail.com" method="POST"
+
+# contact form works with : https://formspree.io
 
 ############################## social links ##############################
 [[params.social]]
@@ -83,17 +85,6 @@ hasChildren = true
   url = "installation"
   weight = 1
 
-  [[menu.main]]
-  parent = "docs"
-  name = "Billing and Pricing"
-  url = "billing-pricing"
-  weight = 2
-
-  [[menu.main]]
-  parent = "docs"
-  name = "Features"
-  url = "features"
-  weight = 3
 
 # Code menu
 [[menu.main]]
