@@ -15,21 +15,21 @@ SELECT column1, column2 ,column3 INTO OUTFILE '/tmp/out.csv'
   FROM my_table;
 ```
 
-Or, use [Athena](https://docs.aws.amazon.com/athena/latest/ug/querying.html)
+Or, use [Athena as shown here](https://docs.aws.amazon.com/athena/latest/ug/querying.html)
 
 
 ### Files are in a folder, and I like linux commands
 
 The easiest way to do this is using the linux cut command. Suppose you have a file called ```in.csv``` or a directory of files that look like 
 
-Folder<br>
-├── in1.csv<br>
-├── in2.csv<br>
-├── .<br>
-├── .<br>
-├── .<br>
-├── .<br>
-└── in2000.csv<br>
+```text
+Folder
+├── in1.csv
+├── in2.csv
+├── .
+├── .
+└── in2000.csv
+```
 
 ... and assuming the delimiter used is a comma (,), and you want to select the first three columns, do
 
