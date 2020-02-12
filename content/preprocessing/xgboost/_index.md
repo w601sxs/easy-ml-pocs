@@ -5,10 +5,10 @@ draft: false
 ---
 
 
-## Pre-reqs
+### Pre-reqs
 Make sure you have a CSV file with the column you want to predict along with other data columns or features, call it 'file.csv'
 
-## Make some necessary imports
+### Make some necessary imports
 
 ```python
 from sklearn import model_selection
@@ -18,18 +18,18 @@ import pandas as pd
 import numpy as np
 ```
 
-## Read data using pandas
+### Read data using pandas
 ```python
 data = pd.read_csv('file.csv')
 ```
 
-## Choose the column you want to predict
+### Choose the column you want to predict
 
 ```python
 predictor_column_name = 'column-name'
 ```
 
-## Clean up the data
+### Clean up the data
 
 ```python
 # split data into X (features) and y (column you want to predict)
@@ -49,7 +49,7 @@ alldata = np.vstack((label_encoded_y.T, features.T)).T
 alldata = np.nan_to_num(alldata)
 ```
 
-## Split and write the data
+### Split and write the data
 
 ```python
 train_data, validation_data, test_data = np.split(alldata, [int(0.7 * len(alldata)), int(0.9 * len(alldata))])
