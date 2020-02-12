@@ -4,7 +4,7 @@ date: 2020-02-11T23:23:17-05:00
 draft: false
 ---
 
-# I am using a SQL database
+### I am using a SQL database
 
 Use SQL select before dumping out files for your ML project
 
@@ -18,18 +18,18 @@ SELECT column1, column2 ,column3 INTO OUTFILE '/tmp/out.csv'
 Or, use [Athena](https://docs.aws.amazon.com/athena/latest/ug/querying.html)
 
 
-# Files are in a folder, and I like linux commands
+### Files are in a folder, and I like linux commands
 
 The easiest way to do this is using the linux cut command. Suppose you have a file called ```in.csv``` or a directory of files that look like 
 
-Folder
-├── in1.csv
-├── in2.csv
-├── .
-├── .
-├── .
-├── .
-└── in2000.csv
+Folder<br>
+├── in1.csv<br>
+├── in2.csv<br>
+├── .<br>
+├── .<br>
+├── .<br>
+├── .<br>
+└── in2000.csv<br>
 
 ... and assuming the delimiter used is a comma (,), and you want to select the first three columns, do
 
@@ -43,7 +43,7 @@ If you need a specific list of columns, do:
 cut -d "," -f1-10,20-25,30-33 Folder/in*.csv > outfile.csv
 ```
 
-# How about in Python?
+### How about in Python?
 ```python
 import pandas as pd
 df = pd.read_csv('in.csv')
