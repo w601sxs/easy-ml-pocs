@@ -18,7 +18,7 @@ In multi-label classification, individual classes represent different categories
 Let's say you have a CSV file with 2 columns,
 
 
-##Multi-Class Mode:
+### Multi-Class Mode:
 
 ```html
 Sample label 1,Text of document 1
@@ -68,7 +68,7 @@ SAMPLELABEL3,Text of document 3
 ```
 
 
-##Multi-Label Mode:
+### Multi-Label Mode:
 
 ```html
 Sample label 1|Sample label2,Text of document 1
