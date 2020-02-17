@@ -4,7 +4,6 @@ date: 2020-02-07T00:14:57-05:00
 draft: false
 ---
 
-### Pre-reqs
 From Comprehend [Custom Classifier](https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification-training.html), it supports two modes: multi-class and multi-label
 
 In multi-class classification, each document can have one and only one class assigned to it. The individual classes are mutually exclusive.
