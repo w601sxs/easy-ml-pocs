@@ -10,8 +10,6 @@ The first step is to collect and format historical data on the processes you wan
 
 When specifying the paths for the training and test data, you can specify a single file or a directory that contains multiple files, which can be stored in subdirectories. By default, the DeepAR model determines the input format from the file extension (.json, .json.gz, or .parquet) in the specified input path. If the path does not end in one of these extensions, you must explicitly specify the format in the SDK for Python.
 
-
-### Data formatting
 The records in your input files should contain the following fields:
 
 ```start``` — A string with the format YYYY-MM-DD HH:MM:SS. The start timestamp can't contain time zone information.
@@ -22,6 +20,32 @@ The records in your input files should contain the following fields:
 
 ```cat``` (optional) — An array of categorical features that can be used to encode the groups that the record belongs to. Categorical features must be encoded as a 0-based sequence of positive integers. For example, the categorical domain {R, G, B} can be encoded as {0, 1, 2}. All values from each categorical domain must be represented in the training dataset. That's because the DeepAR algorithm can forecast only for categories that have been observed during training.
 
+
+### Data formatting
+
+Let say your data is currently in csv file and looks like below:
+
+```html
+start, target, cat, dynamic_feat
+"2009-11-01 00:00:00", [4.3, "NaN", 5.1, ...], [0, 1], [[1.1, 1.2, 0.5, ...]]
+"2012-01-30 00:00:00", [1.0, -5.0, ...], [2, 3], [[1.1, 2.05, ...]]
+"1999-01-30 00:00:00", [2.0, 1.0], [1, 4], [[1.3, 0.4]]
+```
+
+As mentioned before, you would have to convert the csv data into JSONLines. You can use below python code snippet to do so.
+
+```python
+import csv
+import jsonlines
+
+
+with open('data.csv', newline='') as csvfile:
+	reader = csv.DictReader(csvfile)
+	with jsonlines.open('data.jsonl', mode='w') as writer:
+		writer.write_all(reader)
+```
+
+Your converted data now should look like below:
 ```html
 {"start": "2009-11-01 00:00:00", "target": [4.3, "NaN", 5.1, ...], "cat": [0, 1], "dynamic_feat": [[1.1, 1.2, 0.5, ...]]}
 {"start": "2012-01-30 00:00:00", "target": [1.0, -5.0, ...], "cat": [2, 3], "dynamic_feat": [[1.1, 2.05, ...]]}
