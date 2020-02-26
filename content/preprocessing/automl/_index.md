@@ -21,7 +21,7 @@ Let’s assume we are trying to build a binary classification model predicting i
 import pandas as pd
 data = pd.read_csv('file.csv')
 
-# Don't include headers or indices
+# Don't include indices
 data.to_csv('automl-train.csv', index=False, header=True)
 ```
 
