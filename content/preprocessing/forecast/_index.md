@@ -6,7 +6,7 @@ draft: false
 
 ### Prepare Forecast data
 
-While there are many ways to use personalize, this is the least resistance path. Let's assume you have a dataset with three columns: a timestamp column, a target column (this is the value you want to forecast), and a category column.
+While there are many ways to use Forecast, this is the least resistance path. Let's assume you have a dataset with three columns: a timestamp column, a target column (this is the value you want to forecast), and a category column.
 
 ```html
 2020-01-01 01:00:00, 1.0, CATEGORY_0
