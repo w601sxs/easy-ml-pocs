@@ -23,7 +23,7 @@ The records in your input files should contain the following fields:
 
 ### Data formatting
 
-Let say your data is currently in csv file and looks like below:
+Let say your data is currently in train-data.csv file and looks like below:
 
 ```html
 timestamp, target, cat
@@ -41,9 +41,9 @@ import csv
 import jsonlines
 
 
-with open('data.csv', newline='') as csvfile:
+with open('train-data.csv', newline='') as csvfile:
 	reader = csv.DictReader(csvfile)
-	with jsonlines.open('data.jsonl', mode='w') as writer:
+	with jsonlines.open('train-data.jsonl', mode='w') as writer:
 		writer.write_all(reader)
 ```
 
@@ -60,4 +60,4 @@ Your converted data now should look like below:
 
 DeepAR supports two data channels. The required train channel describes the training dataset. The optional test channel describes a dataset that the algorithm uses to evaluate model accuracy after training. Note that if a “test” channel is not specified, DeepAR will not validate model performance on a hold-out dataset.
 
-Upload this [data to S3](../uploadtos3), to a location similar to ```s3://bucketname/train-dataset.json``` and ```s3://bucketname/test-dataset.json```
+Upload this [data to S3](../uploadtos3), to a location similar to ```s3://bucketname/train-data.jsonl``` and ```s3://bucketname/test-data.jsonl```
