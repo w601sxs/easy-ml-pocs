@@ -1,5 +1,5 @@
 ---
-title: "Sagemaker DeepAR preprocessing"
+title: "DeepAR preprocessing"
 date: 2020-02-26T10:52:58-05:00
 draft: false
 ---
@@ -14,10 +14,13 @@ When specifying the paths for the training and test data, you can specify a sing
 ### Data formatting
 The records in your input files should contain the following fields:
 
-start — A string with the format YYYY-MM-DD HH:MM:SS. The start timestamp can't contain time zone information.
-target — An array of floating-point values or integers that represent the time series. You can encode missing values as null literals, or as "NaN" strings in JSON, or as nan floating-point values in Parquet.
-dynamic_feat (optional) — An array of arrays of floating-point values or integers that represents the vector of custom feature time series (dynamic features).
-cat (optional) — An array of categorical features that can be used to encode the groups that the record belongs to. Categorical features must be encoded as a 0-based sequence of positive integers. For example, the categorical domain {R, G, B} can be encoded as {0, 1, 2}. All values from each categorical domain must be represented in the training dataset. That's because the DeepAR algorithm can forecast only for categories that have been observed during training.
+```start``` — A string with the format YYYY-MM-DD HH:MM:SS. The start timestamp can't contain time zone information.
+
+```target``` — An array of floating-point values or integers that represent the time series. You can encode missing values as null literals, or as "NaN" strings in JSON, or as nan floating-point values in Parquet.
+
+```dynamic_feat``` (optional) — An array of arrays of floating-point values or integers that represents the vector of custom feature time series (dynamic features).
+
+```cat``` (optional) — An array of categorical features that can be used to encode the groups that the record belongs to. Categorical features must be encoded as a 0-based sequence of positive integers. For example, the categorical domain {R, G, B} can be encoded as {0, 1, 2}. All values from each categorical domain must be represented in the training dataset. That's because the DeepAR algorithm can forecast only for categories that have been observed during training.
 
 ```html
 {"start": "2009-11-01 00:00:00", "target": [4.3, "NaN", 5.1, ...], "cat": [0, 1], "dynamic_feat": [[1.1, 1.2, 0.5, ...]]}
