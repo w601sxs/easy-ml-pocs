@@ -26,10 +26,12 @@ The records in your input files should contain the following fields:
 Let say your data is currently in csv file and looks like below:
 
 ```html
-start, target, cat, dynamic_feat
-"2009-11-01 00:00:00", [4.3, "NaN", 5.1, ...], [0, 1], [[1.1, 1.2, 0.5, ...]]
-"2012-01-30 00:00:00", [1.0, -5.0, ...], [2, 3], [[1.1, 2.05, ...]]
-"1999-01-30 00:00:00", [2.0, 1.0], [1, 4], [[1.3, 0.4]]
+timestamp, target, cat
+2014-01-01 01:00:00,38.34991708126038,client_12
+2014-01-01 02:00:00,33.5820895522388,client_12
+2014-01-01 03:00:00,34.41127694859037,client_12
+2014-01-01 04:00:00,39.800995024875625,client_12
+2014-01-01 05:00:00,41.044776119402975,client_12
 ```
 
 As mentioned before, you would have to convert the csv data into JSONLines. You can use below python code snippet to do so.
@@ -47,29 +49,15 @@ with open('data.csv', newline='') as csvfile:
 
 Your converted data now should look like below:
 ```html
-{"start": "2009-11-01 00:00:00", "target": [4.3, "NaN", 5.1, ...], "cat": [0, 1], "dynamic_feat": [[1.1, 1.2, 0.5, ...]]}
-{"start": "2012-01-30 00:00:00", "target": [1.0, -5.0, ...], "cat": [2, 3], "dynamic_feat": [[1.1, 2.05, ...]]}
-{"start": "1999-01-30 00:00:00", "target": [2.0, 1.0], "cat": [1, 4], "dynamic_feat": [[1.3, 0.4]]}
+{"timestamp": "2014-01-01 01:00:00", "target": "38.34991708126038", "cat": "client_12"}
+{"timestamp": "2014-01-01 02:00:00", "target": "33.5820895522388", "cat": "client_12"}
+{"timestamp": "2014-01-01 03:00:00", "target": "34.41127694859037", "cat": "client_12"}
+{"timestamp": "2014-01-01 04:00:00", "target": "39.800995024875625", "cat": "client_12"}
+{"timestamp": "2014-01-01 05:00:00", "target": "41.044776119402975", "cat": "client_12"}
 ```
-
-- The start time and length of the time series can differ. For example, in marketing, products often enter a retail catalog at different dates, so their start dates naturally differ. But all series must have the same frequency, number of categorical features, and number of dynamic features.
-- Shuffle the training file with respect to the position of the time series in the file. In other words, the time series should occur in random order in the file.
-- Make sure to set the start field correctly. The algorithm uses the start timestamp to derive the internal features.
-- If you use categorical features (cat), all time series must have the same number of categorical features. If the dataset contains the cat field, the algorithm uses it and extracts the cardinality of the groups from the dataset. By default, cardinality is "auto". If the dataset contains the cat field, but you don't want to use it, you can disable it by setting cardinality to "". If a model was trained using a cat feature, you must include it for inference.
-- If your dataset contains the dynamic_feat field, the algorithm uses it automatically. All time series have to have the same number of feature time series. The time points in each of the feature time series correspond one-to-one to the time points in the target. In addition, the entry in the dynamic_feat field should have the same length as the target. If the dataset contains the dynamic_feat field, but you don't want to use it, disable it by setting(num_dynamic_feat to ""). If the model was trained with the dynamic_feat field, you must provide this field for inference. In addition, each of the features has to have the length of the provided target plus the prediction_length. In other words, you must provide the feature value in the future.
 
 ### Upload data
 
 DeepAR supports two data channels. The required train channel describes the training dataset. The optional test channel describes a dataset that the algorithm uses to evaluate model accuracy after training. Note that if a “test” channel is not specified, DeepAR will not validate model performance on a hold-out dataset.
-
-For example, a JSON file containing data to train on could look as follows:
-
-```html
- {"start": "2016-01-16", "cat": 1, "target": [4.962, 5.195, 5.157, 5.129, 5.035, ...]}
- {"start": "2016-01-01", "cat": 1, "target": [3.041, 3.190, 3.462, 3.655, 4.114, ...]}
- {"start": "2016-02-03", "cat": 2, "target": [4.133, 4.222, 4.332, 4.216, 4.256, ...]}
-```
-
-Each object could represent daily sales (in thousands) of a particular type of shoes, with "cat": 1 indicating sneakers and "cat": 2 indicating snow boots. Note that each time series has its own starting point in time; the data does not need to be aligned in this sense.
 
 Upload this [data to S3](../uploadtos3), to a location similar to ```s3://bucketname/train-dataset.json``` and ```s3://bucketname/test-dataset.json```
