@@ -1,5 +1,5 @@
 ---
-title: "Sagemaker AutoPilot"
+title: "Automl"
 date: 2020-02-26T11:20:21-05:00
 draft: False
 ---
