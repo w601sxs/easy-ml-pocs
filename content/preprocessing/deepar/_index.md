@@ -48,4 +48,4 @@ For example, a JSON file containing data to train on could look as follows:
 
 Each object could represent daily sales (in thousands) of a particular type of shoes, with "cat": 1 indicating sneakers and "cat": 2 indicating snow boots. Note that each time series has its own starting point in time; the data does not need to be aligned in this sense.
 
-Upload this [data to S3](uploadtos3), to a location similar to "s3://bucketname/train-dataset.json" and "s3://bucketname/test-dataset.json"
+Upload this [data to S3](/../uploadtos3), to a location similar to ```s3://bucketname/train-dataset.json``` and ```s3://bucketname/test-dataset.json```
