@@ -1,8 +1,10 @@
 ---
-title: "Automl"
+title: "Sagemaker AutoPilot"
 date: 2020-02-26T11:20:21-05:00
 draft: False
 ---
+
+Using a single API call, or a few clicks in Amazon SageMaker Studio, SageMaker Autopilot first inspects your data set, and runs a number of candidates to figure out the optimal combination of data preprocessing steps, machine learning algorithms and hyperparameters.
 
 As of today, SageMaker Autopilot supports:
 
@@ -12,20 +14,23 @@ As of today, SageMaker Autopilot supports:
 - Distributed training,
 - Automatic instance and cluster size selection.
 
+Let’s assume we are trying to build a binary classification model predicting if customers will accept or decline a marketing offer.
+
 ### Read data using pandas
-```html
+```python
+import pandas as pd
 data = pd.read_csv('file.csv')
 
 # Don't include headers or indices
 data.to_csv('automl-train.csv', index=False, header=True)
 ```
 
-Upload the data to S3.
+Upload this [data to S3](../uploadtos3), to a location similar to ```s3://bucket/prefix/automl-train.csv```
 
 ### Create AutoML job using the console or CLI or Python
 
 ### Python
-[Click here](https://aws.amazon.com/blogs/aws/amazon-sagemaker-autopilot-fully-managed-automatic-machine-learning/)
+[Click here](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/autopilot/sagemaker_autopilot_direct_marketing.ipynb)
 
 #### Configure data for AutoML job
 
