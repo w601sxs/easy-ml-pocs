@@ -22,10 +22,10 @@ data.to_csv('automl-train.csv', index=False, header=True)
 
 Upload the data to S3.
 
-### Create dataset using the console or CLI or Python
+### Create AutoML job using the console or CLI or Python
 
-###Python
-[Click here]()
+### Python
+[Click here](https://aws.amazon.com/blogs/aws/amazon-sagemaker-autopilot-fully-managed-automatic-machine-learning/)
 
 #### Configure data for AutoML job
 
@@ -63,18 +63,19 @@ sm.create_auto_ml_job(AutoMLJobName=auto_ml_job_name,
 
 ```
 
-###CLI
+### CLI
+[Click here](https://docs.aws.amazon.com/cli/latest/reference/sagemaker/create-auto-ml-job.html)
 
 #### Set data config and create AutoML job
 ```html
 aws sagemaker create-auto-ml-job \
---auto-ml-job-name my-auto-ml-job \
+--auto-ml-job-name my-automl-job \
 --input-data-config '[
         {
             "DataSource": {
                 "S3DataSource": {
                     "S3DataType": "S3Prefix",
-                    "S3Uri": "s3://bucket/prefix/input"
+                    "S3Uri": "s3://<bucket>/<prefix>/input"
                 }
             },
             "CompressionType": "None",
@@ -83,11 +84,11 @@ aws sagemaker create-auto-ml-job \
     ]'
 --output-data-config '{
         "KmsKeyId": "",
-        "S3OutputPath": "s3://bucket/prefix/output"
+        "S3OutputPath": "s3://<bucket>/<prefix>/output"
     }'
---role-arn "arn:aws:iam::```account-id```:role/```role-name-with-path```"
+--role-arn "arn:aws:iam::<account-id>:role/<role-name-with-path>"
 
 ```
 
-###Console
+### Console
 [Click here](https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html)
