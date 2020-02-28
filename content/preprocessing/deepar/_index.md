@@ -6,7 +6,7 @@ draft: false
 
 ### Prepare data
 
-The first step is to collect and format historical data on the processes you want to forecast. DeepAR supports two types of data files: JSON Lines (one JSON object per line) and Parquet
+The first step is to collect and format historical data on the processes you want to forecast. DeepAR supports two types of data files: JSON Lines (one JSON object per line) and Parquet. We thing that creating JSONlines is the least  resistance path to building a PoC with DeepAR, so let's go!
 
 When specifying the paths for the training and test data, you can specify a single file or a directory that contains multiple files, which can be stored in subdirectories. By default, the DeepAR model determines the input format from the file extension (.json, .json.gz, or .parquet) in the specified input path. If the path does not end in one of these extensions, you must explicitly specify the format in the SDK for Python.
 
@@ -23,7 +23,7 @@ The records in your input files should contain the following fields:
 
 ### Data formatting
 
-Let say your data is currently in train-data.csv file and looks like below:
+Let's say your data is currently in train-data.csv file and looks like below:
 
 ```html
 timestamp, target, cat
