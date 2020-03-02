@@ -1,5 +1,5 @@
 ---
-title: "Kmeans"
+title: "Kmeans training"
 date: 2020-03-02T18:04:32-05:00
 draft: false
 ---
