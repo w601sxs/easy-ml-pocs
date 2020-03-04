@@ -1,5 +1,5 @@
 ---
-title: "Autopilot Preprocessing"
+title: "Autopilot preprocessing"
 date: 2020-02-26T11:20:21-05:00
 draft: False
 ---
@@ -21,4 +21,3 @@ data.to_csv('automl-train.csv', index=False, header=True)
 If you have to select or drop any columns, please refer to [this documentation](../selecting)
 
 Upload this [data to S3](../uploadtos3), to a location similar to ```s3://bucket/prefix/automl-train.csv```
-
