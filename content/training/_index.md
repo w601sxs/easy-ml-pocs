@@ -5,3 +5,5 @@ icon: "ti-dashboard"
 description: "Code related to training ML models"
 type : "code"
 ---
+
+Use the code shown in these sections to use preprocessed data for training with an ML algorithm of choice.

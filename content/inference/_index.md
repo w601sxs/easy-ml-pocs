@@ -5,3 +5,5 @@ icon: "ti-direction-alt"
 description: "Code related to real-time or batch inferences"
 type : "code"
 ---
+
+Use the code shown in these sections to deploy and use a model that has been trained by ML algorithm of choice.
