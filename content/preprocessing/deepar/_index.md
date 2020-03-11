@@ -60,4 +60,6 @@ Your converted data now should look like below:
 
 DeepAR supports two data channels. The required train channel describes the training dataset. The optional test channel describes a dataset that the algorithm uses to evaluate model accuracy after training. Note that if a “test” channel is not specified, DeepAR will not validate model performance on a hold-out dataset.
 
-Upload this [data to S3](../uploadtos3), to a location similar to ```s3://bucketname/train-data.jsonl``` and ```s3://bucketname/test-data.jsonl```
+Upload this [data to S3](../uploadtos3), to a location similar to ```s3://bucketname/train/train-data.jsonl``` and ```s3://bucketname/test/test-data.jsonl```
+
+You may upload many train and test JSON-line files to the corresponding prefixes above, namely ```s3://bucketname/train``` and ```s3://bucketname/test```
