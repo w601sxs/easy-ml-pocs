@@ -58,3 +58,7 @@ np.savetxt('train.csv', train_data, delimiter=',')
 np.savetxt('validation.csv', validation_data, delimiter=',')
 np.savetxt('test.csv', test_data, delimiter=',')
 ```
+
+Upload these three files to three folders / prefixes on S3:
+
+- t
