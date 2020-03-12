@@ -66,16 +66,16 @@ link = "#"
 [[menu.main]]
 name = "Faq"
 url = "faq"
-weight = 4
+weight = 8
 
 [[menu.main]]
 name = "contact"
 url = "contact"
-weight = 5
+weight = 7
 
 # Dropdown menu
 [[menu.main]]
-weight = 3
+weight = 9
 name = "docs"
 hasChildren = true
 
@@ -110,6 +110,14 @@ hasChildren = true
   url="inference"
   weight=3  
 
+# Code menu
+[[menu.main]]
+weight=6
+name = "Use cases"
+url="usecases"
+hasChildren = false
+
+
 ################################ English Language ######################
 [Languages.en]
 languageName = "En"
@@ -120,10 +128,10 @@ copyright = "Documents are copyright © AWS 2020."
 
 # banner
 [Languages.en.params.banner]
-title = "How do I ..."
-description = "Find code snippets you can use to build out your ML PoCs step-by-step"
+title = "Easy ML PoCs"
+description = "Find building blocks you can use to create your Machine Learning PoCs"
 bg_image = "images/banner.jpg"
-placeholder = "Just ask here or enter terms"
+placeholder = "Search for code snippets and walkthroughs ..."
 
 # call to action
 [Languages.en.params.cta]
