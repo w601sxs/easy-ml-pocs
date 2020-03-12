@@ -137,7 +137,7 @@ placeholder = "Search for code snippets and walkthroughs ..."
 [Languages.en.params.cta]
 enable = true
 title = "Didn't find an answer to your question?"
-description = "Contribute an answer or contact us for help."
+description = "Contribute a use case, an answer or contact us for help."
 [Languages.en.params.cta.button]
 enable = true
 label = "contact us"

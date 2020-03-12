@@ -13,8 +13,14 @@ At the end of the preprocessing for DeepAR page, you uploaded your JSON-lines da
 Initialize the estimator:
 
 ```python
+import sagemaker
+
+session = sagemaker.Session()
+
+region = session.boto_region_name
+
 estimator = sagemaker.estimator.Estimator(
-    sagemaker_session=sagemaker.Session(),
+    sagemaker_session=session,
     image_name=sagemaker.amazon.amazon_estimator.get_image_uri(region, "forecasting-deepar", "latest"),
     role=sagemaker.get_execution_role(),
     train_instance_count=1,
@@ -39,6 +45,8 @@ hyperparameters = {
 estimator.set_hyperparameters(**hyperparameters)
 ```
 
+Change the '1H' to '6H' for 6 hours, and '1D' for 1 day if your data points are 6 hours or one day apart, for example. Learn more about hyperparameters [here](https://docs.aws.amazon.com/sagemaker/latest/dg/deepar_hyperparameters.html)
+
 Next, train your DeepAR model using the Sagemaker Python SDK:
 
 ```python
@@ -50,3 +58,4 @@ data_channels = {
 estimator.fit(inputs=data_channels, wait=True)
 ```
 
+When adding the path to the file for input data, go up to the folder and not the actual .jsonl file. This is set up so that a train folder for example, may contain multiple .jsonl files.

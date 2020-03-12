@@ -43,6 +43,14 @@ If you need a specific list of columns, do:
 cut -d "," -f1-10,20-25,30-33 Folder/in*.csv > outfile.csv
 ```
 
+You can also use ```awk``` on linux and MacOS to select and reorder columns:
+
+```html
+awk -F "|" '{ print $1","$3","$5 }' Folder/in*csv > outfile.csv
+```
+
+Here, we reead from a pipe-delimited file, select **and** reorder columns, and then write a comma separated file.
+
 ### How about in Python?
 ```python
 import pandas as pd

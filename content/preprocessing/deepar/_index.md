@@ -26,34 +26,68 @@ The records in your input files should contain the following fields:
 Let's say your data is currently in train-data.csv file and looks like below:
 
 ```html
-timestamp, target, cat
-2014-01-01 01:00:00,38.34991708126038,client_12
-2014-01-01 02:00:00,33.5820895522388,client_12
-2014-01-01 03:00:00,34.41127694859037,client_12
-2014-01-01 04:00:00,39.800995024875625,client_12
-2014-01-01 05:00:00,41.044776119402975,client_12
+timestamp,target,cat1,cat2 
+2014-01-01 01:00:00,38.34991708126038,client_12, blue
+2014-01-01 02:00:00,33.5820895522388,client_12, blue
+2014-01-01 03:00:00,34.41127694859037,client_12, red
+2014-01-01 04:00:00,39.800995024875625,client_12, blue
+2014-01-01 05:00:00,41.044776119402975,client_12, red
 ```
 
-As mentioned before, you would have to convert the csv data into JSONLines. You can use below python code snippet to do so.
+Make sure there are no spaces after or before commas. Spaces within the field are okay.
+
+As mentioned before, you would have to convert the csv data into JSONLines. You can use below python code snippet to do so. 
+
+Change the values of the target_column and the group_column below. For example, this could be sales as the target column and store_id as the group_column; or number_of_clicks as the target_column and customer_id as the group_column. If you don't have a group_column, you could either add a dummy column with the same group number, or modify the code below:
 
 ```python
-import csv
+import pandas as pd
 import jsonlines
+from sklearn import preprocessing
+le = preprocessing.LabelEncoder()
 
 
-with open('train-data.csv', newline='') as csvfile:
-	reader = csv.DictReader(csvfile)
-	with jsonlines.open('train-data.jsonl', mode='w') as writer:
-		writer.write_all(reader)
+series = pd.read_csv('test.csv', parse_dates=[0], index_col=0)
+series.sort_index(inplace=True)
+
+target_column = 'target'
+group_column = 'cat1'
+
+for col in series.columns:
+    if col !=target_column:
+        series[col] = le.fit_transform(series[col])
+
+if series[group_column].nunique()==1:
+    a = [series]
+else:
+    a = [v for k, v in series.groupby(group_column)]
+
+out = []
+
+for i in range(len(a)):
+    dynamic_feat = []
+    cat = []
+    for col in a[0].columns:
+        if col == target_column:
+            target = a[0][col].values.tolist()
+            start = str(a[0].index[0])
+
+        else:
+            if a[0][col].nunique()>=2: #if 2 or more values, add as dynamic feature
+                dynamic_feat.append(a[0][col].values.astype(float).tolist())
+            elif a[0][col].nunique()==1: #if 1 value, add as category
+                cat.append(int(a[0][col][0]))
+    out.append({'start':start, 'target':target, 'cat':cat, 'dynamic_feat':dynamic_feat})
+    
+with jsonlines.open('train-data.jsonl', mode='w') as writer:
+    writer.write_all(out)
 ```
 
-Your converted data now should look like below:
+If you don't have jsonlines installed, do ```pip install jsonlines```
+
+Each line of your converted data now should look like below:
 ```html
-{"timestamp": "2014-01-01 01:00:00", "target": "38.34991708126038", "cat": "client_12"}
-{"timestamp": "2014-01-01 02:00:00", "target": "33.5820895522388", "cat": "client_12"}
-{"timestamp": "2014-01-01 03:00:00", "target": "34.41127694859037", "cat": "client_12"}
-{"timestamp": "2014-01-01 04:00:00", "target": "39.800995024875625", "cat": "client_12"}
-{"timestamp": "2014-01-01 05:00:00", "target": "41.044776119402975", "cat": "client_12"}
+{"start": "2014-01-01 01:00:00", "target": [38.34991708126038, 33.582089552238806, 34.41127694859037, 39.800995024875625, 41.044776119402975], "cat": [0], "dynamic_feat": [[0.0, 0.0, 1.0, 0.0, 1.0]]}
 ```
 
 ### Upload data
