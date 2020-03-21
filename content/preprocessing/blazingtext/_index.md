@@ -35,6 +35,10 @@ Modify the category column and write out a preprocessed file:
 ```python
 data.category  = '__' + data.category + '__'
 
+import nltk
+nltk.download('punkt')
+data.text.apply(lambda x: ' '.join(nltk.word_tokenize(str.lower(x))))
+
 # Don't include headers or indices
 data.to_csv('out.csv',index=False,header=False)
 ```
@@ -47,6 +51,8 @@ __CATEGORY__,Text of document 2
 __CATEGORY__,Text of document 3
 ```
 
-*Note* : Repeat this for all files that is part of your dataset
+*Note* : Repeat this for all files that is part of your dataset.
 
+Upload ```out.csv``` to an S3 localtion that looks like ```s3://bucketname/train/out.csv```
 
+Also see [this link](../splittesttrain) for information on how to split this output file into two files, for training and testing. 

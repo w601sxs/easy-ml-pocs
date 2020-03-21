@@ -10,7 +10,7 @@ Make sure you saw [this link](../../preprocessing/deepar) for preprocessing firs
 At the end of the preprocessing for DeepAR page, you uploaded your JSON-lines data to S3, to a location similar to ```s3://bucketname/train/train-data.jsonl``` and ```s3://bucketname/test/test-data.jsonl```
 
 
-Initialize the estimator:
+On a SageMaker notebook, initialize the estimator:
 
 ```python
 import sagemaker

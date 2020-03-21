@@ -49,7 +49,7 @@ You can also use ```awk``` on linux and MacOS to select and reorder columns:
 awk -F "|" '{ print $1","$3","$5 }' Folder/in*csv > outfile.csv
 ```
 
-Here, we reead from a pipe-delimited file, select **and** reorder columns, and then write a comma separated file.
+Here, we read from a pipe-delimited file, select **and** reorder columns, and then write a comma separated file.
 
 To remove additional characters, like a double-quote, add a ```{gsub(/\"/,"")};``` before the print keyword.
 
