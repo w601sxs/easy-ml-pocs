@@ -5,7 +5,7 @@ draft: false
 ---
 Rekognition Object Detection deals with finding objects within an image. To train your model, Amazon Rekognition Custom Labels require bounding boxes to be drawn around objects and the objects should be labeled in your images.
 
-If your image has an object, such as a machine part or an animated character, the image needs a bounding box around an object and an object-identifying object. You can have multiple objects within an image you want to detect. In this step, you add object-level labels and bounding boxes to an image.
+If your image has an object, such as a machine part or an animated character, the image needs a bounding box around an object and an object-identifying label. You can have multiple objects within an image. In this step, you add object-level labels and bounding boxes to an image.
 
 If you are looking to classify images or scenes, check out [Rekognition Classification preprocessing](../rekogscenes)
 
