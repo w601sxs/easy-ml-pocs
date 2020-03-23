@@ -73,19 +73,6 @@ name = "contact"
 url = "contact"
 weight = 7
 
-# Dropdown menu
-[[menu.main]]
-weight = 9
-name = "docs"
-hasChildren = true
-
-  [[menu.main]]
-  parent = "docs"
-  name = "Installation"
-  url = "installation"
-  weight = 1
-
-
 # Code menu
 [[menu.main]]
 weight=1

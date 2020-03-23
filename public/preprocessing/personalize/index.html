@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+  <title>Personalize preprocessing</title>
+
+  <meta name="generator" content="Hugo 0.64.0" />
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/themify-icons/themify-icons.css">
+
+  <!-- highlight -->
+  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/highlight/hybrid.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://master.d2ifucdfz09ieg.amplifyapp.com/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  
+  <style>
+  :root{
+    --primary-color:#02007e;
+    --secondary-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/css/style.min.css" media="screen">
+
+<!-- jquiry -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+  
+  <!-- navigation -->
+  <header class="shadow-bottom sticky-top bg-white">
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light">
+  <a class="navbar-brand" href="/">
+    
+    
+    
+    Easy ML PoCs
+    
+  </a>
+  <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse text-center" id="navigation">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/">Home</a>
+      </li>
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          code
+        </a>
+        <div class="dropdown-menu">
+          
+          <a class="dropdown-item" href="/preprocessing">Preprocessing</a>
+          
+          <a class="dropdown-item" href="/training">Training</a>
+          
+          <a class="dropdown-item" href="/inference">Inference</a>
+          
+        </div>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/usecases">Use cases</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/contact">contact</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/faq">Faq</a>
+      </li>
+      
+      
+    </ul>
+    
+  </div>
+</nav>
+    </div>
+  </header>
+  <!-- /navigation -->
+  
+  <div id="content">
+
+<!-- details page -->
+<section class="single section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="mb-5 bg-white p-4 sticky-top top-100">
+          <ul class="list-styled">
+            
+            <a class="d-block h4 back-btn" href="/"></a>
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/" title="Use cases" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/">
+    Use cases
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/pneumonia/" title="Pneumonia detection from Chest X-ray images" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/pneumonia/">
+    Pneumonia detection from Chest X-ray images
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/rossman/" title="Rossman store sales forecast" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/rossman/">
+    Rossman store sales forecast
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/" title="1. Preprocessing" class="sidelist
+  parent
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/">
+    1. Preprocessing
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/kmeans/" title="Kmeans preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/kmeans/">
+    Kmeans preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/automl/" title="Autopilot preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/automl/">
+    Autopilot preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/deepar/" title="DeepAR preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/deepar/">
+    DeepAR preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/personalize/" title="Personalize preprocessing" class="sidelist
+  parent
+  active
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/personalize/">
+    Personalize preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/selecting/" title="Select, drop or extract Columns" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/selecting/">
+    Select, drop or extract Columns
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/splittesttrain/" title="Split dataset to Train and Test" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/splittesttrain/">
+    Split dataset to Train and Test
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/uploadtos3/" title="Upload to s3" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/uploadtos3/">
+    Upload to s3
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/forecast/" title="Forecast preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/forecast/">
+    Forecast preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/rekogscenes/" title="Rekognition Classification preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/rekogscenes/">
+    Rekognition Classification preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/xgboost/" title="Xgboost preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/xgboost/">
+    Xgboost preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/blazingtext/" title="Blazingtext preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/blazingtext/">
+    Blazingtext preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/comprehend/" title="Comprehend preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/comprehend/">
+    Comprehend preprocessing
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/" title="2. Training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/">
+    2. Training
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/forecast/" title="Forecast training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/forecast/">
+    Forecast training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/personalize/" title="Personalize training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/personalize/">
+    Personalize training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/blazingtext/" title="BlazingText training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/blazingtext/">
+    BlazingText training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/deepar/" title="DeepAR training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/deepar/">
+    DeepAR training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/kmeans/" title="Kmeans training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/kmeans/">
+    Kmeans training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/comprehend/" title="Comprehend training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/comprehend/">
+    Comprehend training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/automl/" title="Autopilot Training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/automl/">
+    Autopilot Training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/rekogscenes/" title="Rekognition Classification training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/rekogscenes/">
+    Rekognition Classification training
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/" title="3. Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/">
+    3. Inference
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/personalize/" title="Personalize inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/personalize/">
+    Personalize inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/blazingtext/" title="BlazingText Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/blazingtext/">
+    BlazingText Inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/deepar/" title="DeepAR Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/deepar/">
+    DeepAR Inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/rekogscenes/" title="Rekognition Classification inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/rekogscenes/">
+    Rekognition Classification inference
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/faq/" title="Frequently Asked Questions" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/faq/">
+    Frequently Asked Questions
+  </a>
+  
+  
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/contact/" title="Got Any Questions" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/contact/">
+    Got Any Questions
+  </a>
+  
+  
+
+
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-5 bg-white">
+          <h2 class="mb-5">Personalize preprocessing</h2>
+          
+          <div class="content"><h3 id="import-data">Import data</h3>
+<p>Amazon Personalize imports data only from files that are in the comma-separated values (CSV) format. Amazon Personalize requires the first row of your CSV file to contain column headers. The column headers in your CSV file need to map to the schema to create the dataset. Don&rsquo;t enclose headers in quotation marks (&quot;). Upload your file into an Amazon Simple Storage Service (Amazon S3) bucket that <a href="https://docs.aws.amazon.com/personalize/latest/dg/data-prep-upload-s3.html">Amazon Personalize can access</a></p>
+<p>Let&rsquo;s assume your dataset contains file named &ldquo;ratings.csv&rdquo; with following data.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">userId,movieId,rating,timestamp
+1,2,3.5,1112486027
+1,29,3.5,1112484676
+1,32,3.5,1112484819
+1,47,3.5,1112484727
+1,50,3.5,1112484580
+</code></pre></div><p>It reads like this: user 1 gave movie 2 a 3.5 rating. Same for movies 29, 32, 47, 50 and so on!</p>
+<p>Before you add a dataset to Amazon Personalize, you must define a schema for that dataset. Name the file as &ldquo;my-personalize-schema.json&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;record&#34;</span>,
+<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Interactions&#34;</span>,
+<span style="color:#f92672">&#34;namespace&#34;</span>: <span style="color:#e6db74">&#34;com.amazonaws.personalize.schema&#34;</span>,
+<span style="color:#f92672">&#34;fields&#34;</span>:[
+    {<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ITEM_ID&#34;</span>, <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>},
+    {<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;USER_ID&#34;</span>, <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>},
+    {<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;TIMESTAMP&#34;</span>, <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;long&#34;</span>}
+],
+<span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0&#34;</span>}
+</code></pre></div><h3 id="prepare-dataset">Prepare dataset</h3>
+<p>Essentially, what the following python code does:</p>
+<ul>
+<li>Shuffle reviews.</li>
+<li>Keep only movies rated 4 and above, and drop the ratings columns: Purpose for this is to recommend movies that users should really like.</li>
+<li>Rename columns to the names used in the schema.</li>
+<li>Keep only 100,000 interactions to minimize training time</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas<span style="color:#f92672">,</span> boto3
+<span style="color:#f92672">from</span> sklearn.utils <span style="color:#f92672">import</span> shuffle
+ratings <span style="color:#f92672">=</span> pandas<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ratings.csv</span><span style="color:#e6db74">&#39;</span>)
+ratings <span style="color:#f92672">=</span> shuffle(ratings)
+ratings <span style="color:#f92672">=</span> ratings[ratings[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">rating</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">4</span>]
+ratings <span style="color:#f92672">=</span> ratings<span style="color:#f92672">.</span>drop(columns<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">rating</span><span style="color:#e6db74">&#39;</span>)
+ratings<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">USER_ID</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ITEM_ID</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TIMESTAMP</span><span style="color:#e6db74">&#39;</span>]
+ratings <span style="color:#f92672">=</span> ratings[:<span style="color:#ae81ff">100000</span>]
+ratings<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ratings.processed.csv</span><span style="color:#e6db74">&#39;</span>,index<span style="color:#f92672">=</span>False)
+s3 <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s3</span><span style="color:#e6db74">&#39;</span>)
+s3<span style="color:#f92672">.</span>upload_file(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ratings.processed.csv</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">my-personalize-bucket</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ratings.processed.csv</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h3 id="create-dataset-group-create-dataset-and-create-import-job---using-python-cli-and-console">Create dataset group, create dataset and create import job - using Python, CLI and Console</h3>
+<h4 id="python">Python</h4>
+<p><a href="https://docs.aws.amazon.com/personalize/latest/dg/getting-started-python.html">Click here</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
+
+personalize <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">personalize</span><span style="color:#e6db74">&#39;</span>)
+
+dsg_response <span style="color:#f92672">=</span> personalize<span style="color:#f92672">.</span>create_dataset_group(name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">my-personalize-dataset-group</span><span style="color:#e6db74">&#39;</span>)
+dsg_arn <span style="color:#f92672">=</span> dsg_response[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">datasetGroupArn</span><span style="color:#e6db74">&#39;</span>]
+
+<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">my-personalize-schema.json</span><span style="color:#e6db74">&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    createSchemaResponse <span style="color:#f92672">=</span> personalize<span style="color:#f92672">.</span>create_schema(
+        name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">MyPersonalizeSchema</span><span style="color:#e6db74">&#39;</span>,
+        schema <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+    )
+schema_arn <span style="color:#f92672">=</span> createSchemaResponse[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">schemaArn</span><span style="color:#e6db74">&#39;</span>]
+
+
+ds_response <span style="color:#f92672">=</span> personalize<span style="color:#f92672">.</span>create_dataset(
+    name <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">MyPersonalizeDataset</span><span style="color:#e6db74">&#39;</span>,
+    schemaArn <span style="color:#f92672">=</span> schema_arn,
+    datasetGroupArn <span style="color:#f92672">=</span> dsg_arn,
+    datasetType <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Interactions</span><span style="color:#e6db74">&#39;</span>)
+
+ds_arn <span style="color:#f92672">=</span> ds_response[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">datasetArn</span><span style="color:#e6db74">&#39;</span>]
+
+
+dsij_response <span style="color:#f92672">=</span> personalize<span style="color:#f92672">.</span>create_dataset_import_job(
+    jobName <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">YourImportJob</span><span style="color:#e6db74">&#39;</span>,
+    datasetArn <span style="color:#f92672">=</span> ds_arn,
+    dataSource <span style="color:#f92672">=</span> {<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">dataLocation</span><span style="color:#e6db74">&#39;</span>:<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s3://my-personalize-bucket/ratings.processed.csv</span><span style="color:#e6db74">&#39;</span>},
+    roleArn <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">role_arn</span><span style="color:#e6db74">&#39;</span>)
+
+dsij_arn <span style="color:#f92672">=</span> dsij_response[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">datasetImportJobArn</span><span style="color:#e6db74">&#39;</span>]
+</code></pre></div><h4 id="cli">CLI</h4>
+<p><a href="https://docs.aws.amazon.com/personalize/latest/dg/getting-started-cli.html">Click here</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">aws personalize create-dataset-group --name my-personalize-dataset-group
+
+aws personalize create-schema --name my-personalize-schema \
+--schema file://my-personalize-schema.json
+
+aws personalize create-dataset --schema-arn $SCHEMA_ARN \
+--dataset-group-arn $DATASET_GROUP_ARN \
+--dataset-type INTERACTIONS
+
+aws personalize create-dataset-import-job --job-name my-personalize-import-job \
+--role-arn $ROLE_ARN
+--dataset-arn $DATASET_ARN \
+--data-source dataLocation=s3://my-personalize-bucket/ratings.processed.csv
+</code></pre></div><h3 id="console">Console</h3>
+<p><a href="https://docs.aws.amazon.com/personalize/latest/dg/getting-started-console.html">Click here</a></p>
+</div>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 26 Feb 2020</p>
+          <nav class="pagination mt-3">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <a class="nav nav-prev" href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/deepar/"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">DeepAR preprocessing</span></a>
+            
+            
+            <a class="nav nav-next" href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/selecting/"> <span class="d-none d-md-block">Select, drop or extract Columns</span><i class="ti-arrow-right ml-2"></i></a>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+
+
+
+
+
+  </div><!-- footer -->
+<footer class="section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-md-left text-center">
+       <p>Documents are copyright © AWS 2020.</p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline mb-3">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-facebook"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-vimeo-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-linkedin"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/js/script.min.js"></script></body>
+
+</html>

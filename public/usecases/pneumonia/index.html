@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+  <title>Pneumonia detection from Chest X-ray images</title>
+
+  <meta name="generator" content="Hugo 0.64.0" />
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/themify-icons/themify-icons.css">
+
+  <!-- highlight -->
+  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/highlight/hybrid.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://master.d2ifucdfz09ieg.amplifyapp.com/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  
+  <style>
+  :root{
+    --primary-color:#02007e;
+    --secondary-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/css/style.min.css" media="screen">
+
+<!-- jquiry -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+  
+  <!-- navigation -->
+  <header class="shadow-bottom sticky-top bg-white">
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light">
+  <a class="navbar-brand" href="/">
+    
+    
+    
+    Easy ML PoCs
+    
+  </a>
+  <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse text-center" id="navigation">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/">Home</a>
+      </li>
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          code
+        </a>
+        <div class="dropdown-menu">
+          
+          <a class="dropdown-item" href="/preprocessing">Preprocessing</a>
+          
+          <a class="dropdown-item" href="/training">Training</a>
+          
+          <a class="dropdown-item" href="/inference">Inference</a>
+          
+        </div>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/usecases">Use cases</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/contact">contact</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/faq">Faq</a>
+      </li>
+      
+      
+    </ul>
+    
+  </div>
+</nav>
+    </div>
+  </header>
+  <!-- /navigation -->
+  
+  <div id="content">
+
+<!-- details page -->
+<section class="single section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="mb-5 bg-white p-4 sticky-top top-100">
+          <ul class="list-styled">
+            
+            <a class="d-block h4 back-btn" href="/"></a>
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/" title="Use cases" class="sidelist
+  parent
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/">
+    Use cases
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/pneumonia/" title="Pneumonia detection from Chest X-ray images" class="sidelist
+  parent
+  active
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/pneumonia/">
+    Pneumonia detection from Chest X-ray images
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/rossman/" title="Rossman store sales forecast" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/rossman/">
+    Rossman store sales forecast
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/" title="1. Preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/">
+    1. Preprocessing
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/kmeans/" title="Kmeans preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/kmeans/">
+    Kmeans preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/automl/" title="Autopilot preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/automl/">
+    Autopilot preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/deepar/" title="DeepAR preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/deepar/">
+    DeepAR preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/personalize/" title="Personalize preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/personalize/">
+    Personalize preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/selecting/" title="Select, drop or extract Columns" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/selecting/">
+    Select, drop or extract Columns
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/splittesttrain/" title="Split dataset to Train and Test" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/splittesttrain/">
+    Split dataset to Train and Test
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/uploadtos3/" title="Upload to s3" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/uploadtos3/">
+    Upload to s3
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/forecast/" title="Forecast preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/forecast/">
+    Forecast preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/rekogscenes/" title="Rekognition Classification preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/rekogscenes/">
+    Rekognition Classification preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/xgboost/" title="Xgboost preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/xgboost/">
+    Xgboost preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/blazingtext/" title="Blazingtext preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/blazingtext/">
+    Blazingtext preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/comprehend/" title="Comprehend preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/comprehend/">
+    Comprehend preprocessing
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/" title="2. Training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/">
+    2. Training
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/forecast/" title="Forecast training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/forecast/">
+    Forecast training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/personalize/" title="Personalize training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/personalize/">
+    Personalize training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/blazingtext/" title="BlazingText training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/blazingtext/">
+    BlazingText training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/deepar/" title="DeepAR training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/deepar/">
+    DeepAR training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/kmeans/" title="Kmeans training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/kmeans/">
+    Kmeans training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/comprehend/" title="Comprehend training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/comprehend/">
+    Comprehend training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/automl/" title="Autopilot Training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/automl/">
+    Autopilot Training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/rekogscenes/" title="Rekognition Classification training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/rekogscenes/">
+    Rekognition Classification training
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/" title="3. Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/">
+    3. Inference
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/personalize/" title="Personalize inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/personalize/">
+    Personalize inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/blazingtext/" title="BlazingText Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/blazingtext/">
+    BlazingText Inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/deepar/" title="DeepAR Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/deepar/">
+    DeepAR Inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/rekogscenes/" title="Rekognition Classification inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/rekogscenes/">
+    Rekognition Classification inference
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/faq/" title="Frequently Asked Questions" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/faq/">
+    Frequently Asked Questions
+  </a>
+  
+  
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/contact/" title="Got Any Questions" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/contact/">
+    Got Any Questions
+  </a>
+  
+  
+
+
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-5 bg-white">
+          <h2 class="mb-5">Pneumonia detection from Chest X-ray images</h2>
+          
+          <div class="content"><h3 id="introduction">Introduction</h3>
+<p>Chest X-ray images (anterior-posterior) were selected from retrospective cohorts of pediatric patients of one to five years old from Guangzhou Women and Children’s Medical Center, Guangzhou. All chest X-ray imaging was performed as part of patients’ routine clinical care.</p>
+<p>For the analysis of chest x-ray images, all chest radiographs were initially screened for quality control by removing all low quality or unreadable scans. The diagnoses for the images were then graded by two expert physicians before being cleared for training the AI system. In order to account for any grading errors, the evaluation set was also checked by a third expert.</p>
+<h4 id="acknowledgements">Acknowledgements</h4>
+<ul>
+<li>
+<p>Data: <a href="https://data.mendeley.com/datasets/rscbjbr9sj/2">https://data.mendeley.com/datasets/rscbjbr9sj/2</a></p>
+</li>
+<li>
+<p>License: CC BY 4.0</p>
+</li>
+<li>
+<p>Citation: <a href="http://www.cell.com/cell/fulltext/S0092-8674(18)30154-5">http://www.cell.com/cell/fulltext/S0092-8674(18)30154-5</a></p>
+</li>
+</ul>
+<p>This data was obtained from Kaggle <a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">here</a></p>
+<p>For folks who want to repeat this use case, the data is stored as a direct download <a href="s3://easy-ml-pocs/pneumonia-image-data/">here</a></p>
+<p>Here is what a normal chest X-ray looks like:</p>
+<p><img src="/images/normalchest.jpeg" alt=""></p>
+<p>&hellip; and here is what a pneumonia patient&rsquo;s chest X-ray looks like:</p>
+<p><img src="/images/viruschest.jpeg" alt=""></p>
+<h3 id="assumptions">Assumptions</h3>
+<p>For this PoC, we will simplify the dataset by using only a subset of images. We will take the training data available on Kaggle, and use about 1000 images in each class (<code>Normal</code> and <code>Pneumonia</code>). While this is is 1/5th of the images available in the actual dataset, it is sufficient for us to showcase art of the possible. We followed steps outlined in Rekognition custom classification <a href="../../preprocessing/rekogscenes">preprocessing</a> and <a href="../../training/rekogscenes">training</a> for this PoC.</p>
+<h3 id="step-1---preprocessing">Step 1 - Preprocessing</h3>
+<h4 id="step-11---download-chest-x-ray--data">Step 1.1 - Download Chest X-ray  data</h4>
+<blockquote>
+<p>Click download after logging in (also consider using the Kaggle download API):
+<img src="/images/downloadchestdata.png" alt=""></p>
+</blockquote>
+<h4 id="step-12---create-folders-on-s3-named-normal-and-pneumonia">Step 1.2 - Create folders on S3 named &ldquo;Normal&rdquo; and &ldquo;Pneumonia&rdquo;</h4>
+<p><img src="/images/createfolderchest.png" alt=""></p>
+<h4 id="step-13---upload-data-to-created-folders">Step 1.3 - Upload data to created folders</h4>
+<p><img src="/images/uploaddatachest.png" alt=""></p>
+<h4 id="step-14---navigate-to-rekognition-and-create-a-dataset">Step 1.4 - Navigate to Rekognition and Create a dataset</h4>
+<p><img src="/images/createdatasetchest.png" alt=""></p>
+<h3 id="step-2---training">Step 2 - Training</h3>
+<blockquote>
+<p>From <a href="../../training/rekogscenes">this link</a> on training with Rekognition custom classification, verify your images and click &ldquo;Train Model&rdquo;</p>
+</blockquote>
+<p><img src="/images/modelchest.png" alt=""></p>
+<blockquote>
+<p>Click &ldquo;Split training dataset&rdquo; and then click &ldquo;Train&rdquo;:</p>
+</blockquote>
+<p><img src="/images/clicktrainchest.png" alt=""></p>
+<blockquote>
+<p>You should then be taken to the next screen with shows that training is in progress:</p>
+</blockquote>
+<p><img src="/images/traininginprogress.png" alt=""></p>
+<h3 id="step-3---deploy-model">Step 3 - Deploy model</h3>
+<blockquote>
+<p>The final F1 score for our model is 98.5%. That&rsquo;s pretty good!
+<img src="/images/finalaccuracychest.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Some more details for our trained model:
+<img src="/images/moremodeldetailschest.png" alt=""></p>
+</blockquote>
+<p>From <a href="../../inference/rekogscenes">this link</a> on deploying a model trained with Rekognition, do</p>
+<blockquote>
+<p>Navigate to the project you trained your model under, wait for the <strong>status</strong> to show <code>TRAINING_COMPLETE</code> and then click the on the model <strong>Name</strong>  of the trained model. Review model performance details, and scroll down to the <strong>Use model</strong> section. Expand the section and copy code to create an API for your custom model and use the model for new predictions</p>
+</blockquote>
+<h4 id="start-model">Start model</h4>
+<pre><code>aws rekognition start-project-version \
+  --project-version-arn &quot;arn:aws:rekognition:us-east-1:&lt;account-number&gt;:project/pneumonia/version/pneumonia.2020-03-23T14.09.57/1584986997214&quot; \
+  --min-inference-units 1 \
+  --region us-east-1
+</code></pre><h4 id="analyze-image">Analyze image</h4>
+<pre><code>aws rekognition detect-custom-labels  --project-version-arn &quot;arn:aws:rekognition:us-east-1:&lt;account-number&gt;:project/pneumonia/version/pneumonia.2020-03-23T14.09.57/1584986997214&quot;  --image '{&quot;S3Object&quot;: {&quot;Bucket&quot;: &quot;easy-ml-pocs&quot;, &quot;Name&quot;: &quot;pneumonia-image-data/pneumonia/person1023_virus_1714.jpeg&quot;}}' --region us-east-1
+{
+    &quot;CustomLabels&quot;: [
+        {
+            &quot;Confidence&quot;: 99.46600341796875, 
+            &quot;Name&quot;: &quot;pneumonia&quot;
+        }
+    ]
+} 
+</code></pre><blockquote>
+<p>The model says that this X-ray image is of a person with Pneumonia with a 99.46% confidence.</p>
+</blockquote>
+<h4 id="stop-model">Stop model</h4>
+<pre><code>aws rekognition start-project-version \
+  --project-version-arn &quot;arn:aws:rekognition:us-east-1:497456752804:project/pneumonia/version/pneumonia.2020-03-23T14.09.57/1584986997214&quot; \
+  --min-inference-units 1 \
+  --region us-east-1
+</code></pre><h3 id="done">Done!</h3>
+</div>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 07 Feb 2020</p>
+          <nav class="pagination mt-3">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <a class="nav nav-prev" href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">Use cases</span></a>
+            
+            
+            <a class="nav nav-next" href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/rossman/"> <span class="d-none d-md-block">Rossman store sales forecast</span><i class="ti-arrow-right ml-2"></i></a>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+
+
+
+
+
+  </div><!-- footer -->
+<footer class="section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-md-left text-center">
+       <p>Documents are copyright © AWS 2020.</p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline mb-3">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-facebook"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-vimeo-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-linkedin"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/js/script.min.js"></script></body>
+
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Autopilot preprocessing on Easy ML PoCs</title>
+    <link>https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/automl/</link>
+    <description>Recent content in Autopilot preprocessing on Easy ML PoCs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Documents are copyright © AWS 2020.</copyright>
+    <lastBuildDate>Wed, 26 Feb 2020 11:20:21 -0500</lastBuildDate>
+    
+	<atom:link href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/automl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
