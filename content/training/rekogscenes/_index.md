@@ -4,7 +4,7 @@ date: 2020-02-07T00:15:15-05:00
 draft: false
 ---
 
-Make sure you've seen [this](../../preprocessing/rekogclasses) if you need help creating a dataset first! If you already have a usable dataset, follow along here to train a custom model:
+Make sure you've seen [this](../../preprocessing/rekogscenes) if you need help creating a dataset first! If you already have a usable dataset, follow along here to train a custom model:
 
 Once you have a dataset, you can start by creating a project.
 
@@ -39,6 +39,3 @@ On the projects page click ```Create project```
 > Review your dataset, verify all folders have been imported as classes, and click ```Train model```
 
 ![](/images/verifyclassesandtrain.png)
-
-
-
