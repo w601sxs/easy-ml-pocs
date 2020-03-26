@@ -39,6 +39,3 @@ On the projects page click ```Create project```
 > Review your dataset, verify all folders have been imported as classes, and click ```Train model```
 
 ![](/images/verifyclassesandtrain.png)
-
-
-
