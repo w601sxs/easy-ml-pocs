@@ -1,5 +1,5 @@
 ---
-title: "Pneumonia detection from Chest X-ray images"
+title: "Pneumonia detection from Chest X-ray images using Rekognition Custom Labels"
 date: 2020-02-07T00:15:15-05:00
 draft: false
 ---
