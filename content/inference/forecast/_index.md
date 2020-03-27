@@ -17,7 +17,7 @@ aws forecast create-forecast \
 
 When the forecast is "ACTIVE", you can query it to get predictions. You can export the whole forecast as a CSV file, or query for specific lookups.
 
-####CLI
+#### CLI
 ```html
 aws forecastquery query-forecast \
 --forecast-arn arn:aws:forecast:<region>:<acct-id>:forecast/myforecast \
@@ -25,3 +25,14 @@ aws forecastquery query-forecast \
 --end-date   <YYYY-MM-DDTHH:MM:SS> \
 --filters '{"item_id":"<value>"}'
 ```
+
+To export the whole forecast as a CSV file to your S3 bucket:
+
+#### CLI
+```html
+aws forecast create-forecast-export-job \
+--forecast-export-job-name myforecast_exportjob \
+--forecast-arn arn:aws:forecast:<region>:<acct-id>:forecast/myforecast \
+--destination S3Config="{Path='s3://<bucket>',RoleArn='arn:aws:iam::<acct-id>:role/<Role>'}"
+```
+> Make sure sure the IAM role you provide has permission to write data to your S3 bucket

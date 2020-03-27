@@ -52,6 +52,9 @@ Copy this schema definition for future use **as is** ...
 }
 ```
 
+Here is how the Forecast workflow look like to make predictions:
+![](/images/forecast_workflow.png)
+
 ### Create dataset using the console or CLI or Python
 
 
@@ -102,7 +105,7 @@ aws forecast create-dataset-import-job \
       "RoleArn": "arn:aws:iam::acct-id:role/Role"
     }
   }'
-``` 
+```
 
 ### Console
 [Click here](https://docs.aws.amazon.com/forecast/latest/dg/gs-console.html)

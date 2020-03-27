@@ -25,7 +25,17 @@ aws forecast create-predictor \
 ```
 
 Model training takes time. Don't proceed until training has completed and the status of the predictor is ACTIVE. To check the status:
+
+#### CLI
 ```html
 aws forecast describe-predictor \
+--predictor-arn arn:aws:forecast:<region>:<acct-id>:predictor/mypredictor
+```
+
+Once the predictor is ACTIVE, you can view metrics to see how well the model performed and to decide whether to use the predictor to generate a forecast. To view the metrics:
+
+#### CLI
+```html
+aws forecast get-accuracy-metrics \
 --predictor-arn arn:aws:forecast:<region>:<acct-id>:predictor/mypredictor
 ```
