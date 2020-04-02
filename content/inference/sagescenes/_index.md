@@ -4,7 +4,7 @@ date: 2020-02-07T00:15:15-05:00
 draft: false
 ---
 
-Make sure you have trained your model as outlined [here](../training/sagescenes)
+Make sure you have trained your model as outlined [here](../../training/sagescenes)
 
 ### Using the Console
 
@@ -22,7 +22,7 @@ Make sure you have trained your model as outlined [here](../training/sagescenes)
 import boto3
 from time import gmtime, strftime
 
-sage = boto3.Session().client(service_name='sagemaker') 
+sage = boto3.Session().client(service_name='sagemaker')
 
 model_name="DEMO--classification-model" + time.strftime('-%Y-%m-%d-%H-%M-%S', time.gmtime())
 print(model_name)
@@ -85,7 +85,7 @@ if status != 'InService':
 ```
 
 
-### Perform inference 
+### Perform inference
 ```python
 import boto3
 import json
@@ -96,12 +96,11 @@ runtime = boto3.Session().client(service_name='runtime.sagemaker')
 with open(file_name, 'rb') as f:
     payload = f.read()
     payload = bytearray(payload)
-response = runtime.invoke_endpoint(EndpointName=endpoint_name, 
-                                   ContentType='application/x-image', 
+response = runtime.invoke_endpoint(EndpointName=endpoint_name,
+                                   ContentType='application/x-image',
                                    Body=payload)
 result = response['Body'].read()
 # result will be in json format and convert it to ndarray
 result = json.loads(result)
 
 ```
-
