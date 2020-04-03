@@ -1,5 +1,5 @@
 ---
-title: "Comprehend preprocessing"
+title: "Comprehend custom preprocessing"
 date: 2020-02-07T00:14:57-05:00
 draft: false
 ---

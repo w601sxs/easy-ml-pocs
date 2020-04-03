@@ -1,5 +1,5 @@
 ---
-title: "Comprehend training"
+title: "Comprehend custom training"
 date: 2020-03-02T17:38:26-05:00
 draft: false
 ---

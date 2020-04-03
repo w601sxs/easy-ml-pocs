@@ -1,5 +1,5 @@
 ---
-title: "Personalize inference"
+title: "Comprehend custom inference"
 date: 2020-03-11T14:54:49-04:00
 draft: false
 ---
