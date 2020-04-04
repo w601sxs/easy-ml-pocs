@@ -538,6 +538,24 @@ header.sticky-top {
 }
 
 textarea.form-control {
+  height: 100px;
+  padding: 15px;
+}
+
+/* /small search */
+.small-form-control {
+  height: 30px;
+  border-radius: 20px;
+  border: 0;
+  padding: 0 15px;
+}
+
+.small-form-control:focus {
+  border: 0;
+  box-shadow: none !important;
+}
+
+textarea.small-form-control {
   height: 150px;
   padding: 20px;
 }

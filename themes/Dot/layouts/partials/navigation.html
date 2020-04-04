@@ -12,6 +12,11 @@
     {{ .Site.Title }}
     {{ end }}
   </a>
+  {{ if .IsHome }}
+  {{ else }}
+  <input id="search" class="small-form-control" placeholder="Search ..."  maxlength="30" size="30">
+  {{ end }}
+
   <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -63,5 +68,41 @@
       {{ end }}
     </select>
     {{ end }}
+
+    <!-- Javascript -->
+        {{ $currentNode := . }}
+        {{ $currentNode.Scratch.Set "pages" .Site.Pages }}
+        {{ $pages := ($currentNode.Scratch.Get "pages") }}
+        <script>
+          $(function() {
+          var projects = [
+            {{ range $pages }}
+            {
+              value: "{{ .Title }}",
+              label: "{{ .Title }}",
+              url:"{{ .Permalink }}"
+            },
+            {{ end }}
+          ];
+          $( "#search" ).autocomplete({
+              minLength: 0,
+              source: projects,
+              focus: function( event, ui ) {
+                $( "#search" ).val( ui.item.label );
+                return false;
+              },
+              select: function( event, ui ) {
+                $( "#search" ).val( ui.item.label );
+                $( "#project-id" ).val( ui.item.value );
+                return false;
+              }
+          })
+          .data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+            return $( "<li>" )
+            .append( "<a href=" + item.url + " + \" &quot;\" +  >" + item.label + "</a>" )
+            .appendTo( ul );
+          };
+          });
+        </script>
   </div>
 </nav>
