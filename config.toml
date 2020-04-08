@@ -66,12 +66,12 @@ link = "#"
 [[menu.main]]
 name = "Faq"
 url = "faq"
-weight = 8
+weight = 9
 
 [[menu.main]]
 name = "contact"
 url = "contact"
-weight = 7
+weight = 8
 
 # Code menu
 [[menu.main]]

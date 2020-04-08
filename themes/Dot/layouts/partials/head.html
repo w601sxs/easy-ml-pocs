@@ -1,4 +1,5 @@
 <head>
+
   <meta charset="utf-8">
   <title>{{ .Title }}</title>
 
@@ -22,6 +23,9 @@
 
   {{ "<!-- fonts -->" | safeHTML }}
   <link href="https://fonts.googleapis.com/css?family={{replace .Site.Params.font_family ' ' '+' | title}}:300,400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   
   <style>
   :root{
