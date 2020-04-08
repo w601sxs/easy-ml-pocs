@@ -132,7 +132,7 @@ function imagedata(botui)
       if(res.value == 'objdetect' || res.value == 'imgclass'){
         message(1000,'Does your data satisfy limits as specified in docs of [Amazon Rekognition custom labels?](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/limits.html)^').then(() => my2buttons('yes', 'yes', 'no', 'no')).then(res => {
       if(res.value =='yes'){
-        if(results.problem=='objdetect'){rekmessage='Great! Try searching for "Rekognition object detection" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)'} else {rekmessage='Great! Try searching for "Rekognition image classification" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)'}
+        if(results.problem=='objdetect'){rekmessage='Great! Try searching for "Rekognition object detection" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)'} else {rekmessage='Great! Try searching for "Rekognition classification" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)'}
         message(1000, rekmessage).then(()=>
           {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Good luck with your PoC, and may the force be with you! ![](https://easy-ml-pocs.s3.amazonaws.com/yoda.png)');});
       } else {
