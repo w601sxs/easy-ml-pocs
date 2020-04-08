@@ -27,8 +27,9 @@
   </div>
   {{- partial "footer.html" . -}}
 
+  {{ if .IsHome }}
   {{- partial "chatpartial.html" . -}}
-
+  {{ end }}
 </body>
 
 
