@@ -21,9 +21,17 @@ Folder
 
 
 ```html
-awk '{if(rand()<0.7) {print > train.csv} else {print > test.csv}}' Folder/in*csv
+!awk '{if( rand() <= 0.2){ print $0 > "test_data.csv"} else {print $0 > "train_data.csv"}}' Folder/in*csv
 ```
+
 That's it!
+
+
+To count the number of lines in the resulting csv files, do:
+
+```html
+wc -l <filename>
+```
 
 
 ### How about in Python?
