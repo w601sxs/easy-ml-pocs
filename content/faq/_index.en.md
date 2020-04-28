@@ -5,9 +5,9 @@ draft: false
 
 {{< faq "What exactly is this website or project?" >}}
 
-We have identified common use cases, algorithms used for solving these use cases within the AWS stack and common patterns. This site is a searchable catalog of code snippets that can be used as lego blocks to build a working Machine Learning model. The goal of this project (the Pythia workflow and this website) is provide the least resistance path to building a Machine Learning PoC.
+We have identified common use cases, algorithms used for solving these use cases within the AWS stack and common patterns. This site is a searchable catalog of code snippets that can be used as lego blocks to build a working Machine Learning model. The goal of this project (the Pythia workflow and this website) is to provide a least resistance path for building a Machine Learning PoC.
 
-Can there be better algorithms? better PoCs? better architectures to do the same? Yes, for sure! But we believe that this gets us to a working model faster than any of those methods since it involves generic, bite-sized code samples that you can use as lego blocks to build up to your sample ML application. We would love your contribution to make this better.
+Can there be better algorithms? better PoCs? better architectures to do the same? Yes, for sure! But we believe that this gets us to a working model faster than any of those methods since it involves generic, bite-sized code samples that you can use as lego blocks to build up your sample ML application. We would love your contribution to make this better.
 
 {{</ faq >}}
 
@@ -25,7 +25,7 @@ Absolutely! We are determining ways to scale the contributions from all of you. 
 
 {{< faq "Is there any documentation on how to contribute?" >}}
 
-All documentation on how to contribute is available in the corresponding github for this website.
+All documentation on how to contribute is available in the corresponding github repository: (easy-ml-pocs](https://github.com/w601sxs/easy-ml-pocs) for this website.
 
 {{</ faq >}}
 
