@@ -1,6 +1,16 @@
 # easy-ml-pocs
 Site for organizing and searching for reusable code samples related to building ML PoCs on AWS.
 
+# General instructions:
+- The only thing you will have to touch, really, is the content folder. Add/ clone/ modify existing folders and .md markdown files.
+
+- To test locally, go to the root folder and do a 'hugo serve' and then head to localhost (link will be printed out in the output. 
+
+- Commit and push once you are ready and the website will be built.
+
+- Do a PR for major changes, push directly for minor ones.
+
+
 ## Add useful examples and organize within chapters
 Then, create content pages inside the previously created chapter. Here are two ways to create content in a chapter with this hugo template:
 
