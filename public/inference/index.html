@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+
   <meta charset="utf-8">
   <title>3. Inference</title>
 
@@ -11,26 +12,29 @@
   
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="https://master.d11arstd4fhlv6.amplifyapp.com/plugins/bootstrap/bootstrap.min.css">
 
   <!-- themefy-icon -->
-  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="https://master.d11arstd4fhlv6.amplifyapp.com/plugins/themify-icons/themify-icons.css">
 
   <!-- highlight -->
-  <link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/highlight/hybrid.css">
+  <link rel="stylesheet" href="https://master.d11arstd4fhlv6.amplifyapp.com/plugins/highlight/hybrid.css">
 
   <!--Favicon-->
-  <link rel="icon" href="https://master.d2ifucdfz09ieg.amplifyapp.com/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://master.d11arstd4fhlv6.amplifyapp.com/images/favicon.png" type="image/x-icon">
 
   <!-- fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   
   <style>
   :root{
-    --primary-color:#02007e;
+    --primary-color:#FF9900;
     --secondary-color:#f9f9f9;
-    --text-color:#636363;
-    --text-color-dark:#242738;
+    --text-color:#232F3E;
+    --text-color-dark:#161E2D;
     --white-color:#ffffff;
     --font-family:Lato;
   }
@@ -38,22 +42,22 @@
 
 <!-- Main Stylesheet -->
 
-<link rel="stylesheet" href="https://master.d2ifucdfz09ieg.amplifyapp.com/css/style.min.css" media="screen">
+<link rel="stylesheet" href="https://master.d11arstd4fhlv6.amplifyapp.com/css/style.min.css" media="screen">
 
 <!-- jquiry -->
-<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/jquery/jquery-1.12.4.js"></script>
+<script src="https://master.d11arstd4fhlv6.amplifyapp.com/plugins/jquery/jquery-1.12.4.js"></script>
 
 <!-- jquary ui -->
-<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/jquery/jquery-ui.js"></script>
+<script src="https://master.d11arstd4fhlv6.amplifyapp.com/plugins/jquery/jquery-ui.js"></script>
 
 <!-- Bootstrap JS -->
-<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="https://master.d11arstd4fhlv6.amplifyapp.com/plugins/bootstrap/bootstrap.min.js"></script>
 
 <!-- match-height JS -->
-<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/match-height/jquery.matchHeight-min.js"></script>
+<script src="https://master.d11arstd4fhlv6.amplifyapp.com/plugins/match-height/jquery.matchHeight-min.js"></script>
 
 <!-- highlight -->
-<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/plugins/highlight/highlight.pack.js"></script>
+<script src="https://master.d11arstd4fhlv6.amplifyapp.com/plugins/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 </head>
@@ -67,9 +71,15 @@
     
     
     
-    Easy ML PoCs
+    
+    <img class="img-fluid" src="https://master.d11arstd4fhlv6.amplifyapp.com/images/AWS_AWS_logo_RGB_ALT-BLK.png" alt="Easy ML PoCs">
+    
     
   </a>
+  
+  <input id="search" class="small-form-control" placeholder="Search ..."  maxlength="30" size="30">
+  
+
   <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -119,6 +129,348 @@
       
     </ul>
     
+
+    
+        
+        
+        
+        <script>
+          $(function() {
+          var projects = [
+            
+            {
+              value: "Object detection using Pascal VOC dataset with SageMaker",
+              label: "Object detection using Pascal VOC dataset with SageMaker",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/usecases\/objdetection\/"
+            },
+            
+            {
+              value: "SageMaker Object Detection inference",
+              label: "SageMaker Object Detection inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/sageobjdetection\/"
+            },
+            
+            {
+              value: "SageMaker Object Detection preprocessing",
+              label: "SageMaker Object Detection preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/sageobjdetection\/"
+            },
+            
+            {
+              value: "SageMaker Object Detection training",
+              label: "SageMaker Object Detection training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/sageobjdetection\/"
+            },
+            
+            {
+              value: "Rekognition Object Detection training",
+              label: "Rekognition Object Detection training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/rekogobjdetection\/"
+            },
+            
+            {
+              value: "Forecast inference",
+              label: "Forecast inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/forecast\/"
+            },
+            
+            {
+              value: "Rekognition Object Detection inference",
+              label: "Rekognition Object Detection inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/rekogobjdetection\/"
+            },
+            
+            {
+              value: "Rekognition Object Detection preprocessing",
+              label: "Rekognition Object Detection preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/rekogobjdetection\/"
+            },
+            
+            {
+              value: "Comprehend custom inference",
+              label: "Comprehend custom inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/comprehend\/"
+            },
+            
+            {
+              value: "Personalize inference",
+              label: "Personalize inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/personalize\/"
+            },
+            
+            {
+              value: "Forecast training",
+              label: "Forecast training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/forecast\/"
+            },
+            
+            {
+              value: "Personalize training",
+              label: "Personalize training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/personalize\/"
+            },
+            
+            {
+              value: "BlazingText training",
+              label: "BlazingText training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/blazingtext\/"
+            },
+            
+            {
+              value: "DeepAR training",
+              label: "DeepAR training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/deepar\/"
+            },
+            
+            {
+              value: "Kmeans training",
+              label: "Kmeans training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/kmeans\/"
+            },
+            
+            {
+              value: "Kmeans preprocessing",
+              label: "Kmeans preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/kmeans\/"
+            },
+            
+            {
+              value: "Comprehend custom training",
+              label: "Comprehend custom training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/comprehend\/"
+            },
+            
+            {
+              value: "Autopilot Inference",
+              label: "Autopilot Inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/automl\/"
+            },
+            
+            {
+              value: "Autopilot Training",
+              label: "Autopilot Training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/automl\/"
+            },
+            
+            {
+              value: "Xgboost Training",
+              label: "Xgboost Training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/xgboost\/"
+            },
+            
+            {
+              value: "Autopilot preprocessing",
+              label: "Autopilot preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/automl\/"
+            },
+            
+            {
+              value: "DeepAR preprocessing",
+              label: "DeepAR preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/deepar\/"
+            },
+            
+            {
+              value: "Personalize preprocessing",
+              label: "Personalize preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/personalize\/"
+            },
+            
+            {
+              value: "Select, drop or extract Columns",
+              label: "Select, drop or extract Columns",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/selecting\/"
+            },
+            
+            {
+              value: "Split dataset to Train and Test",
+              label: "Split dataset to Train and Test",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/splittesttrain\/"
+            },
+            
+            {
+              value: "Upload to s3",
+              label: "Upload to s3",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/uploadtos3\/"
+            },
+            
+            {
+              value: "Forecast preprocessing",
+              label: "Forecast preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/forecast\/"
+            },
+            
+            {
+              value: "BlazingText Inference",
+              label: "BlazingText Inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/blazingtext\/"
+            },
+            
+            {
+              value: "DeepAR Inference",
+              label: "DeepAR Inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/deepar\/"
+            },
+            
+            {
+              value: "Pneumonia detection from Chest X-ray images using Rekognition Custom Labels",
+              label: "Pneumonia detection from Chest X-ray images using Rekognition Custom Labels",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/usecases\/pneumonia\/"
+            },
+            
+            {
+              value: "Pneumonia detection from Chest X-ray images using SageMaker",
+              label: "Pneumonia detection from Chest X-ray images using SageMaker",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/usecases\/pneumoniasage\/"
+            },
+            
+            {
+              value: "Rekognition Classification inference",
+              label: "Rekognition Classification inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/rekogscenes\/"
+            },
+            
+            {
+              value: "Rekognition Classification preprocessing",
+              label: "Rekognition Classification preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/rekogscenes\/"
+            },
+            
+            {
+              value: "Rekognition Classification training",
+              label: "Rekognition Classification training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/rekogscenes\/"
+            },
+            
+            {
+              value: "Rossman store sales forecast",
+              label: "Rossman store sales forecast",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/usecases\/rossman\/"
+            },
+            
+            {
+              value: "SageMaker Image Classification inference",
+              label: "SageMaker Image Classification inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/sagescenes\/"
+            },
+            
+            {
+              value: "SageMaker Image Classification preprocessing",
+              label: "SageMaker Image Classification preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/sagescenes\/"
+            },
+            
+            {
+              value: "SageMaker Image Classification training",
+              label: "SageMaker Image Classification training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/sagescenes\/"
+            },
+            
+            {
+              value: "SageMaker Kmeans inference",
+              label: "SageMaker Kmeans inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/kmeans\/"
+            },
+            
+            {
+              value: "Use cases",
+              label: "Use cases",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/usecases\/"
+            },
+            
+            {
+              value: "Xgboost Inference",
+              label: "Xgboost Inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/xgboost\/"
+            },
+            
+            {
+              value: "Xgboost preprocessing",
+              label: "Xgboost preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/xgboost\/"
+            },
+            
+            {
+              value: "Blazingtext preprocessing",
+              label: "Blazingtext preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/blazingtext\/"
+            },
+            
+            {
+              value: "Comprehend custom preprocessing",
+              label: "Comprehend custom preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/comprehend\/"
+            },
+            
+            {
+              value: "1. Preprocessing",
+              label: "1. Preprocessing",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/"
+            },
+            
+            {
+              value: "2. Training",
+              label: "2. Training",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/training\/"
+            },
+            
+            {
+              value: "3. Inference",
+              label: "3. Inference",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/inference\/"
+            },
+            
+            {
+              value: "Categories",
+              label: "Categories",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/categories\/"
+            },
+            
+            {
+              value: "Easy ML PoCs",
+              label: "Easy ML PoCs",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/"
+            },
+            
+            {
+              value: "Frequently Asked Questions",
+              label: "Frequently Asked Questions",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/faq\/"
+            },
+            
+            {
+              value: "Got Any Questions",
+              label: "Got Any Questions",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/contact\/"
+            },
+            
+            {
+              value: "Tags",
+              label: "Tags",
+              url:"https:\/\/master.d11arstd4fhlv6.amplifyapp.com\/tags\/"
+            },
+            
+          ];
+          $( "#search" ).autocomplete({
+              minLength: 0,
+              source: projects,
+              focus: function( event, ui ) {
+                $( "#search" ).val( ui.item.label );
+                return false;
+              },
+              select: function( event, ui ) {
+                $( "#search" ).val( ui.item.label );
+                $( "#project-id" ).val( ui.item.value );
+                return false;
+              }
+          })
+          .data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+            return $( "<li>" )
+            .append( "<a href=" + item.url + " + \" &quot;\" +  >" + item.label + "</a>" )
+            .appendTo( ul );
+          };
+          });
+        </script>
   </div>
 </nav>
     </div>
@@ -142,11 +494,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/" title="Use cases" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/" title="Use cases" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/">
     Use cases
   </a>
   
@@ -165,12 +517,12 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/pneumonia/" title="Pneumonia detection from Chest X-ray images" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/objdetection/" title="Object detection using Pascal VOC dataset with SageMaker" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/pneumonia/">
-    Pneumonia detection from Chest X-ray images
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/objdetection/">
+    Object detection using Pascal VOC dataset with SageMaker
   </a>
   
   
@@ -184,11 +536,49 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/rossman/" title="Rossman store sales forecast" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/pneumonia/" title="Pneumonia detection from Chest X-ray images using Rekognition Custom Labels" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/usecases/rossman/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/pneumonia/">
+    Pneumonia detection from Chest X-ray images using Rekognition Custom Labels
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/pneumoniasage/" title="Pneumonia detection from Chest X-ray images using SageMaker" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/pneumoniasage/">
+    Pneumonia detection from Chest X-ray images using SageMaker
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/rossman/" title="Rossman store sales forecast" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/rossman/">
     Rossman store sales forecast
   </a>
   
@@ -208,11 +598,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/" title="1. Preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/" title="1. Preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/">
     1. Preprocessing
   </a>
   
@@ -231,11 +621,49 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/kmeans/" title="Kmeans preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/sageobjdetection/" title="SageMaker Object Detection preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/kmeans/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/sageobjdetection/">
+    SageMaker Object Detection preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogobjdetection/" title="Rekognition Object Detection preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogobjdetection/">
+    Rekognition Object Detection preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/kmeans/" title="Kmeans preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/kmeans/">
     Kmeans preprocessing
   </a>
   
@@ -250,11 +678,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/automl/" title="Autopilot preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/automl/" title="Autopilot preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/automl/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/automl/">
     Autopilot preprocessing
   </a>
   
@@ -269,11 +697,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/deepar/" title="DeepAR preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/deepar/" title="DeepAR preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/deepar/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/deepar/">
     DeepAR preprocessing
   </a>
   
@@ -288,11 +716,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/personalize/" title="Personalize preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/personalize/" title="Personalize preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/personalize/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/personalize/">
     Personalize preprocessing
   </a>
   
@@ -307,11 +735,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/selecting/" title="Select, drop or extract Columns" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/selecting/" title="Select, drop or extract Columns" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/selecting/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/selecting/">
     Select, drop or extract Columns
   </a>
   
@@ -326,11 +754,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/splittesttrain/" title="Split dataset to Train and Test" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/splittesttrain/" title="Split dataset to Train and Test" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/splittesttrain/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/splittesttrain/">
     Split dataset to Train and Test
   </a>
   
@@ -345,11 +773,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/uploadtos3/" title="Upload to s3" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/uploadtos3/" title="Upload to s3" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/uploadtos3/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/uploadtos3/">
     Upload to s3
   </a>
   
@@ -364,11 +792,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/forecast/" title="Forecast preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/forecast/" title="Forecast preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/forecast/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/forecast/">
     Forecast preprocessing
   </a>
   
@@ -383,11 +811,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/rekogscenes/" title="Rekognition Classification preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogscenes/" title="Rekognition Classification preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/rekogscenes/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogscenes/">
     Rekognition Classification preprocessing
   </a>
   
@@ -402,11 +830,30 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/xgboost/" title="Xgboost preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/sagescenes/" title="SageMaker Image Classification preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/xgboost/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/sagescenes/">
+    SageMaker Image Classification preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/xgboost/" title="Xgboost preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/xgboost/">
     Xgboost preprocessing
   </a>
   
@@ -421,11 +868,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/blazingtext/" title="Blazingtext preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/blazingtext/" title="Blazingtext preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/blazingtext/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/blazingtext/">
     Blazingtext preprocessing
   </a>
   
@@ -440,12 +887,12 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/comprehend/" title="Comprehend preprocessing" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/comprehend/" title="Comprehend custom preprocessing" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/preprocessing/comprehend/">
-    Comprehend preprocessing
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/comprehend/">
+    Comprehend custom preprocessing
   </a>
   
   
@@ -464,11 +911,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/" title="2. Training" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/" title="2. Training" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/">
     2. Training
   </a>
   
@@ -487,11 +934,49 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/forecast/" title="Forecast training" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/sageobjdetection/" title="SageMaker Object Detection training" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/forecast/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/sageobjdetection/">
+    SageMaker Object Detection training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/rekogobjdetection/" title="Rekognition Object Detection training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/rekogobjdetection/">
+    Rekognition Object Detection training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/forecast/" title="Forecast training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/forecast/">
     Forecast training
   </a>
   
@@ -506,11 +991,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/personalize/" title="Personalize training" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/personalize/" title="Personalize training" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/personalize/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/personalize/">
     Personalize training
   </a>
   
@@ -525,11 +1010,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/blazingtext/" title="BlazingText training" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/blazingtext/" title="BlazingText training" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/blazingtext/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/blazingtext/">
     BlazingText training
   </a>
   
@@ -544,11 +1029,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/deepar/" title="DeepAR training" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/deepar/" title="DeepAR training" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/deepar/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/deepar/">
     DeepAR training
   </a>
   
@@ -563,11 +1048,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/kmeans/" title="Kmeans training" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/kmeans/" title="Kmeans training" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/kmeans/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/kmeans/">
     Kmeans training
   </a>
   
@@ -582,12 +1067,12 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/comprehend/" title="Comprehend training" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/comprehend/" title="Comprehend custom training" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/comprehend/">
-    Comprehend training
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/comprehend/">
+    Comprehend custom training
   </a>
   
   
@@ -601,11 +1086,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/automl/" title="Autopilot Training" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/automl/" title="Autopilot Training" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/automl/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/automl/">
     Autopilot Training
   </a>
   
@@ -620,12 +1105,50 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/training/rekogscenes/" title="Rekognition Classification training" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/xgboost/" title="Xgboost Training" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/rekogscenes/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/xgboost/">
+    Xgboost Training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/rekogscenes/" title="Rekognition Classification training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/rekogscenes/">
     Rekognition Classification training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/sagescenes/" title="SageMaker Image Classification training" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/sagescenes/">
+    SageMaker Image Classification training
   </a>
   
   
@@ -644,11 +1167,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/" title="3. Inference" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/" title="3. Inference" class="sidelist
   parent
   active
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/">
     3. Inference
   </a>
   
@@ -667,11 +1190,87 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/personalize/" title="Personalize inference" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/sageobjdetection/" title="SageMaker Object Detection inference" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/personalize/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/sageobjdetection/">
+    SageMaker Object Detection inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/forecast/" title="Forecast inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/forecast/">
+    Forecast inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/rekogobjdetection/" title="Rekognition Object Detection inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/rekogobjdetection/">
+    Rekognition Object Detection inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/comprehend/" title="Comprehend custom inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/comprehend/">
+    Comprehend custom inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/personalize/" title="Personalize inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/personalize/">
     Personalize inference
   </a>
   
@@ -686,11 +1285,30 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/blazingtext/" title="BlazingText Inference" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/automl/" title="Autopilot Inference" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/blazingtext/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/automl/">
+    Autopilot Inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/blazingtext/" title="BlazingText Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/blazingtext/">
     BlazingText Inference
   </a>
   
@@ -705,11 +1323,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/deepar/" title="DeepAR Inference" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/deepar/" title="DeepAR Inference" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/deepar/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/deepar/">
     DeepAR Inference
   </a>
   
@@ -724,12 +1342,69 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/rekogscenes/" title="Rekognition Classification inference" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/rekogscenes/" title="Rekognition Classification inference" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/rekogscenes/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/rekogscenes/">
     Rekognition Classification inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/sagescenes/" title="SageMaker Image Classification inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/sagescenes/">
+    SageMaker Image Classification inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/kmeans/" title="SageMaker Kmeans inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/kmeans/">
+    SageMaker Kmeans inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/xgboost/" title="Xgboost Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/xgboost/">
+    Xgboost Inference
   </a>
   
   
@@ -748,11 +1423,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/faq/" title="Frequently Asked Questions" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/faq/" title="Frequently Asked Questions" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/faq/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/faq/">
     Frequently Asked Questions
   </a>
   
@@ -765,11 +1440,11 @@
 
 
 
-<li data-nav-id="https://master.d2ifucdfz09ieg.amplifyapp.com/contact/" title="Got Any Questions" class="sidelist
+<li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/contact/" title="Got Any Questions" class="sidelist
   
   
   ">
-  <a href="https://master.d2ifucdfz09ieg.amplifyapp.com/contact/">
+  <a href="https://master.d11arstd4fhlv6.amplifyapp.com/contact/">
     Got Any Questions
   </a>
   
@@ -864,6 +1539,296 @@
             
             
             
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             
@@ -1077,22 +2042,10 @@
             
             
             
-
-            
-            
-            
-            
             
 
             
             
-            
-            
-            
-            
-            
-            
-
             
             
             
@@ -1220,13 +2173,7 @@
             
             
             
-            
-            
-            
-            
 
-            
-            
             
             
             
@@ -1339,10 +2286,10 @@
             
 
             
-            <a class="nav nav-prev" href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/rekogscenes/"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">Rekognition Classification training</span></a>
+            <a class="nav nav-prev" href="https://master.d11arstd4fhlv6.amplifyapp.com/training/sagescenes/"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">SageMaker Image Classification training</span></a>
             
             
-            <a class="nav nav-next" href="https://master.d2ifucdfz09ieg.amplifyapp.com/inference/personalize/"> <span class="d-none d-md-block">Personalize inference</span><i class="ti-arrow-right ml-2"></i></a>
+            <a class="nav nav-next" href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/sageobjdetection/"> <span class="d-none d-md-block">SageMaker Object Detection inference</span><i class="ti-arrow-right ml-2"></i></a>
             
           </nav>
         </div>
@@ -1362,7 +2309,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 text-md-left text-center">
-       <p>Documents are copyright © AWS 2020.</p>
+       <p>Documents are copyright © Easy ML PoCs</p>
       </div>
       <div class="col-md-4 text-md-right text-center">
         <ul class="list-inline mb-3">
@@ -1384,6 +2331,8 @@
 
 <!-- Main Script -->
 
-<script src="https://master.d2ifucdfz09ieg.amplifyapp.com/js/script.min.js"></script></body>
+<script src="https://master.d11arstd4fhlv6.amplifyapp.com/js/script.min.js"></script>
+</body>
+
 
 </html>

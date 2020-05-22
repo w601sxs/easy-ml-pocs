@@ -24,16 +24,16 @@ disableLanguages = []
 ############################# Default Parameters ##########################
 [params]
 # logo is for all pages
-logo = ""
+logo = "images/AWS_AWS_logo_RGB_ALT-BLK.png"
 # logo white is for homepage logo, you can use colorful logo too...
-logo_white = ""
+logo_white = "images/AWS_AWS_logo_RGB_WHT.png"
 # when logo is empty, it will show your site title
 
 # customize color
-primary_color = "#02007e"
+primary_color = "#FF9900"
 secondary_color = "#f9f9f9"
-text_color = "#636363"
-text_color_dark = "#242738"
+text_color = "#232F3E"
+text_color_dark = "#161E2D"
 white_color = "#ffffff"
 
 # font family
@@ -111,13 +111,13 @@ languageName = "En"
 languageCode = "en-us"
 weight = 1
 home = "Home"
-copyright = "Documents are copyright © AWS 2020."
+copyright = "Documents are copyright © Easy ML PoCs"
 
 # banner
 [Languages.en.params.banner]
 title = "Easy ML PoCs"
 description = "Find building blocks you can use to create your Machine Learning PoCs"
-bg_image = "images/banner.jpg"
+bg_image = "images/Banner-Red-Orange.png"
 placeholder = "Search for code snippets and walkthroughs ..."
 
 # call to action

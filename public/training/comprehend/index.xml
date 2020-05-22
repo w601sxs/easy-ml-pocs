@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Comprehend training on Easy ML PoCs</title>
-    <link>https://master.d2ifucdfz09ieg.amplifyapp.com/training/comprehend/</link>
-    <description>Recent content in Comprehend training on Easy ML PoCs</description>
+    <title>Comprehend custom training on Easy ML PoCs</title>
+    <link>https://master.d11arstd4fhlv6.amplifyapp.com/training/comprehend/</link>
+    <description>Recent content in Comprehend custom training on Easy ML PoCs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Documents are copyright © AWS 2020.</copyright>
+    <copyright>Documents are copyright © Easy ML PoCs</copyright>
     <lastBuildDate>Mon, 02 Mar 2020 17:38:26 -0500</lastBuildDate>
     
-	<atom:link href="https://master.d2ifucdfz09ieg.amplifyapp.com/training/comprehend/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://master.d11arstd4fhlv6.amplifyapp.com/training/comprehend/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
