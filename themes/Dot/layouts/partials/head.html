@@ -1,4 +1,5 @@
 <head>
+
   <meta charset="utf-8">
   <title>{{ .Title }}</title>
 
@@ -22,22 +23,24 @@
 
   {{ "<!-- fonts -->" | safeHTML }}
   <link href="https://fonts.googleapis.com/css?family={{replace .Site.Params.font_family ' ' '+' | title}}:300,400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   
   <style>
   :root{
     --primary-color:{{ .Site.Params.primary_color }};
-    --body-color:{{ .Site.Params.body_color }};
+    --secondary-color:{{ .Site.Params.secondary_color }};
     --text-color:{{ .Site.Params.text_color }};
     --text-color-dark:{{ .Site.Params.text_color_dark }};
     --white-color:{{ .Site.Params.white_color }};
-    --light-color:{{ .Site.Params.light_color }};
     --font-family:{{ replace .Site.Params.font_family ' ' '+' | title }};
   }
   </style>
 
 {{ "<!-- Main Stylesheet -->" | safeHTML }}
-{{ $css := resources.Get "css/style.css" | minify }}
-<link href="{{ $css.Permalink }}" rel="stylesheet" media="screen"/>
+{{ $styles := resources.Get "css/style.css" | minify}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
 {{ "<!-- jquiry -->" | safeHTML }}
 <script src="{{ `plugins/jquery/jquery-1.12.4.js` | absURL }}"></script>
@@ -54,7 +57,5 @@
 {{ "<!-- highlight -->" | safeHTML }}
 <script src="{{ `plugins/highlight/highlight.pack.js` | absURL }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
-{{ template "_internal/google_analytics.html" . }}
 
 </head>

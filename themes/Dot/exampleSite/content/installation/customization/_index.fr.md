@@ -4,8 +4,6 @@ date: 2018-12-29T11:02:05+06:00
 lastmod: 2020-01-05T10:42:26+06:00
 weight: 4
 draft: false
-# search related keywords
-keywords: [""]
 ---
 
 **Dot** has been built to be as configurable as possible.
@@ -37,19 +35,9 @@ If you need to change this default behavior, create a new file in `layouts/parti
 ```toml
 [params]
   # Change default color scheme with a color name or color code.
-  primary_color = "#02007e"
-  body_color = "#f9f9f9"
-  text_color = "#636363"
-  text_color_dark = "#242738"
-  white_color = "#ffffff"
-  light_color = "#f8f9fa"
-```
-
-### Change default Fonts
-
-
-```toml
-[params]
-  # font family
-  font_family = "lato" # Choose font family from : https://fonts.google.com/
+  primaryColor = "yourColor"
+  secondaryColor = "yourColor"
+  textColor = "yourColor"
+  textColorDark = "yourColor"
+  whiteColor = "yourColor"
 ```
