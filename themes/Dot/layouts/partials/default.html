@@ -1,25 +1,27 @@
 {{ "<!-- details page -->" | safeHTML }}
-<section class="single section bg-gray pb-0">
+<section class="single section-sm pb-0">
   <div class="container">
     <div class="row">
       <div class="col-lg-3">
-        <div class="mb-5 bg-white p-4 sticky-top top-100">
+        <div class="sidebar">
           <ul class="list-styled">
             {{ $currentNode := . }}
-            <a class="d-block h4 back-btn" href="{{ .Site.BaseURL | relLangURL }}">{{ i18n "Back-home"}}</a>
+            <a class="back-btn" href="{{ .Site.BaseURL | relLangURL }}"></a>
             {{range .Site.Home.Sections.ByWeight}}
-            {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode}}
-            {{end}}
+              {{ if eq .FirstSection $currentNode.FirstSection }}
+              {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode}}
+              {{ end }}
+            {{ end }}
           </ul>
         </div>
       </div>
       <div class="col-lg-9">
-        <div class="p-5 bg-white">
+        <div class="p-lg-5 p-4 bg-white">
           <h2 class="mb-5">{{ .Title }}</h2>
           {{ if .Content }}
           <div class="content">{{.Content}}</div>
           {{ else }}
-          <div class="bg-gray p-4">
+          <div class="bg-light p-4">
             <ul class="page-list">
               {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode }}
             </ul>
@@ -78,30 +80,26 @@
 {{ $currentNode := .currentnode }}
 {{with .sect}}
 {{safeHTML .Params.head}}
+{{ $fileUniqueID := "" }}
+{{ with .File }}{{ $fileUniqueID = .UniqueID }}{{ end }}
+{{ $currentNodeFileUniqueID := "" }}
+{{ with $currentNode.File }}{{ $currentNodeFileUniqueID = .UniqueID }}{{ end }}
 <li data-nav-id="{{.Permalink}}" title="{{.Title}}" class="sidelist
-  {{if .IsAncestor $currentNode }}parent{{end}}
-  {{if eq .File.UniqueID $currentNode.File.UniqueID}}active{{end}}
-  {{if .Params.alwaysopen}}parent{{end}}">
+  {{if eq $fileUniqueID $currentNodeFileUniqueID}}active{{end}}">
   <a href="{{.Permalink}}">
     {{safeHTML .Params.Pre}}{{or .Params.menuTitle .LinkTitle .Title}}{{safeHTML .Params.Post}}
   </a>
   {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
   {{ if ne $numberOfPages 0 }}
-  <ul>
-    {{ $currentNode.Scratch.Set "pages" .Pages }}
-    {{ if .Sections}}
-    {{ $currentNode.Scratch.Set "pages" (.Pages | union .Sections) }}
-    {{end}}
-    {{ $pages := ($currentNode.Scratch.Get "pages") }}
-
-    {{ range $pages.ByWeight }}
-    {{ if and .Params.hidden (not $.showhidden) }}
-    {{else}}
-    {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode }}
-    {{end}}
-    {{end}}
-  </ul>
+    <ul>
+      {{ range .Pages.ByWeight }}
+        {{ if and .Params.hidden (not $.showhidden) }}
+        {{else}}
+          {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode }}
+        {{end}}
+      {{end}}
+    </ul>
+  {{ end }}
 </li>
-{{ end }}
 {{ end }}
 {{ end }}

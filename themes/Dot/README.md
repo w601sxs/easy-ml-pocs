@@ -25,7 +25,7 @@ This template is now in a new layout. You can create page with folder, and also 
 - [Installation](#installation)
 - [Main Features](#main-features)
 - [Reporting Issues](#reporting-issues)
-- [Technical Support or Questions](#technical-support-or-questions)
+- [Technical Support or Questions](#technical-support-or-questions-(paid))
 - [More Hugo Themes](https://themefisher.com/hugo-themes/)
 
 ## Demo
@@ -69,7 +69,7 @@ $ git clone git@github.com:themefisher/dot-hugo-documentation-theme.git
 We use GitHub Issues as the official bug tracker for the Navigator Template. Please Search [existing issues](https://github.com/themefisher/dot-hugo-documentation-theme/issues). It’s possible someone has already reported the same problem.
 If your problem or idea is not addressed yet, [open a new issue](https://github.com/themefisher/dot-hugo-documentation-theme/issues)
 
-## Technical Support or Questions
+## Technical Support or Questions (Paid)
 
 If you have questions or need help integrating the product please [contact us](mailto:themefisher@gmail.com) instead of opening an issue.  
 
@@ -78,10 +78,10 @@ We are available for Hiring of your next HUGO project. Drop Us a mail [themefish
 
 ## Premium Themes
 
-| [![Mega-Bundle-HUGO](https://gethugothemes.com/wp-content/uploads/edd/2019/09/Mega-Bundle-HUGO.png)](https://themefisher.com/products/hugo-mega-bundle/) | [![Academia](https://gethugothemes.com/wp-content/uploads/edd/2019/08/Academia.jpg)](https://gethugothemes.com/products/academia/) | [![redlab](https://gethugothemes.com/wp-content/uploads/edd/2019/09/redlab-hugo-thumbnail.jpg)](https://gethugothemes.com/products/redlab-hugo/) |
+| [![Mega-Bundle-HUGO](https://gethugothemes.com/wp-content/uploads/edd/2019/09/Mega-Bundle-HUGO.png)](https://themefisher.com/products/hugo-mega-bundle/) | [![GoDocs](https://gethugothemes.com/wp-content/uploads/edd/2020/02/Home-Page-2.png)](https://gethugothemes.com/products/godocs-hugo-documentation-theme/) | [![Academia](https://gethugothemes.com/wp-content/uploads/edd/2019/08/Academia.jpg)](https://gethugothemes.com/products/academia/) |
 |:---:|:---:|:---:|
-| **Hugo Mega Bundle**  | **Academia**  | **Red Lab**  |
+| **Hugo Mega Bundle**  | **GoDocs**  | **Academia**  |
 | [![Airspace](https://gethugothemes.com/wp-content/uploads/2019/06/hugo-theme-Airspace.jpg)](https://gethugothemes.com/products/airspace-hugo-theme/) | [![Biztrox](https://gethugothemes.com/wp-content/uploads/2019/12/Biztrox.png)](https://gethugothemes.com/products/hugo-business-theme/) | [![Bexer](https://gethugothemes.com/wp-content/uploads/2019/06/hugo-theme-bexer.jpg)](https://gethugothemes.com/products/bexer-hugo-theme/) |
 | **Airspace** | **Biztrox** | **Bexer** |
-| [![Revolve](https://gethugothemes.com/wp-content/uploads/edd/2019/11/revolve.jpg)](https://gethugothemes.com/products/revolve-hugo/) | [![Enov](https://gethugothemes.com/wp-content/uploads/2019/09/enov-business-template.jpg)](https://gethugothemes.com/products/enov-hugo/) | [![all](https://gethugothemes.com/wp-content/uploads/2019/12/get-more-hugo-themes.png)](https://gethugothemes.com/shop/) |
-| **Revolve** | **Enov** | **More Hugo Themes** |
+| [![Revolve](https://gethugothemes.com/wp-content/uploads/edd/2019/11/revolve.jpg)](https://gethugothemes.com/products/revolve-hugo/) | [![redlab](https://gethugothemes.com/wp-content/uploads/edd/2019/09/redlab-hugo-thumbnail.jpg)](https://gethugothemes.com/products/redlab-hugo/) | [![all](https://gethugothemes.com/wp-content/uploads/2019/12/get-more-hugo-themes.png)](https://gethugothemes.com/shop/) |
+| **Revolve** | **RedLab** | **More Hugo Themes** |
