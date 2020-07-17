@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DeepAR Inference on Easy ML PoCs</title>
-    <link>/inference/deepar/</link>
+    <link>https://master.d11arstd4fhlv6.amplifyapp.com/inference/deepar/</link>
     <description>Recent content in DeepAR Inference on Easy ML PoCs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Feb 2020 00:15:15 -0500</lastBuildDate>
     
-	<atom:link href="/inference/deepar/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/deepar/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Object detection using Pascal VOC dataset with SageMaker on Easy ML PoCs</title>
-    <link>/usecases/objdetection/</link>
+    <link>https://master.d11arstd4fhlv6.amplifyapp.com/usecases/objdetection/</link>
     <description>Recent content in Object detection using Pascal VOC dataset with SageMaker on Easy ML PoCs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Apr 2020 11:17:32 -0400</lastBuildDate>
     
-	<atom:link href="/usecases/objdetection/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://master.d11arstd4fhlv6.amplifyapp.com/usecases/objdetection/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

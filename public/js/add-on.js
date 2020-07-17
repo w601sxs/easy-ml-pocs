@@ -9,7 +9,7 @@
     el.textContent = msg;
     setTimeout(() => {
       el.textContent = "Copy";
-    }, 1000);
+    }, 1500);
   }
 
   function selectText(node) {
@@ -31,7 +31,7 @@
     copyBtn.className = "highlight-copy-btn";
     copyBtn.textContent = "Copy";
 
-    let codeEl = containerEl.firstElementChild;
+    let codeEl = containerEl.firstElementChild.firstElementChild;
     copyBtn.addEventListener('click', () => {
       try {
         let selection = selectText(codeEl);
@@ -45,7 +45,8 @@
       }
     });
 
-    containerEl.appendChild(copyBtn);
+    containerEl.firstElementChild.appendChild(copyBtn);
+
   }
 
   // Add copy button to code blocks

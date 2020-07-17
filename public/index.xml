@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Easy ML PoCs</title>
-    <link>/</link>
+    <link>https://master.d11arstd4fhlv6.amplifyapp.com/</link>
     <description>Recent content on Easy ML PoCs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://master.d11arstd4fhlv6.amplifyapp.com/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

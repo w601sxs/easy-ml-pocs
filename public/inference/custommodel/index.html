@@ -3,7 +3,7 @@
   <head>
 
   <meta charset="utf-8">
-  <title>Comprehend custom training</title>
+  <title>Custom SageMaker model Inference</title>
 
   <meta name="generator" content="Hugo 0.64.0" />
 
@@ -923,7 +923,7 @@
 
 
 <li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/" title="2. Training" class="sidelist
-  parent
+  
   
   ">
   <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/">
@@ -1079,8 +1079,8 @@
 
 
 <li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/training/comprehend/" title="Comprehend custom training" class="sidelist
-  parent
-  active
+  
+  
   ">
   <a href="https://master.d11arstd4fhlv6.amplifyapp.com/training/comprehend/">
     Comprehend custom training
@@ -1179,7 +1179,7 @@
 
 
 <li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/" title="3. Inference" class="sidelist
-  
+  parent
   
   ">
   <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/">
@@ -1335,8 +1335,8 @@
 
 
 <li data-nav-id="https://master.d11arstd4fhlv6.amplifyapp.com/inference/custommodel/" title="Custom SageMaker model Inference" class="sidelist
-  
-  
+  parent
+  active
   ">
   <a href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/custommodel/">
     Custom SageMaker model Inference
@@ -1487,46 +1487,30 @@
       </div>
       <div class="col-lg-9">
         <div class="p-5 bg-white">
-          <h2 class="mb-5">Comprehend custom training</h2>
+          <h2 class="mb-5">Custom SageMaker model Inference</h2>
           
-          <div class="content"><p>Make sure you saw <a href="../../preprocessing/comprehend">this link</a> for preprocessing first</p>
-<p>Custom classification is a two step process:</p>
+          <div class="content"><p><a href="https://pypi.org/project/ezsmdeploy/">Ezsmdeploy python SDK</a> helps you easily deploy Machine learning models and provides a rich set of features such as passing one or more model files (yes, through multi-model deployments), automatically choosing an instance based on model size or based on a budget, and load testing endpoints using an intuitive API. Ezsmdeploy uses the SageMaker Python SDK, which is an open source library for training and deploying machine learning models on Amazon SageMaker.</p>
+<h3 id="installing-the-ezsmdeploy-python-sdk">Installing the Ezsmdeploy Python SDK</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">pip install ezsmdeploy
+</code></pre></div><h3 id="key-features">Key Features</h3>
+<p>At minimum, ezsmdeploy requires you to provide:</p>
+<p>one or more model files
+a python script with two functions:</p>
 <ol>
-<li>Identify labels and create and train a custom classifier to recognize those labels.</li>
-<li>Once amazon Comprehend trains the classifier, send unlabeled documents to be classified using that classifier.</li>
+<li>load_model(modelpath) - loads a model from a modelpath and returns a model object, and</li>
+<li>predict(model,input) - performs inference based on a model object and input data
+a list of requirements or a requirements.txt file</li>
 </ol>
-<h2 id="training-a-custom-classifier">Training a Custom Classifier</h2>
-<h3 id="using-the-aws-sdk-for-python">Using the AWS SDK for Python:</h3>
-<p>Instantiate Boto3 SDK:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#2838b0">import</span> <span style="color:#289870">boto3</span>
-client <span style="color:#666">=</span> boto3<span style="color:#666">.</span>client<span style="color:#888">(</span><span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">comprehend</span><span style="color:#b83838">&#39;</span><span style="color:#888">,</span> region_name<span style="color:#666">=</span><span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">region</span><span style="color:#b83838">&#39;</span><span style="color:#888">)</span>
-</code></pre></div><p>To create a Classifier:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">create_response <span style="color:#666">=</span> client<span style="color:#666">.</span>create_document_classifier<span style="color:#888">(</span> InputDataConfig<span style="color:#666">=</span><span style="color:#888">{</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">S3Uri</span><span style="color:#b83838">&#39;</span><span style="color:#888">:</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">s3://S3Bucket/docclass/file name</span><span style="color:#b83838">&#39;</span> <span style="color:#888">}</span><span style="color:#888">,</span> DataAccessRoleArn<span style="color:#666">=</span><span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">arn:aws:iam::account number:role/resource name</span><span style="color:#b83838">&#39;</span><span style="color:#888">,</span> DocumentClassifierName<span style="color:#666">=</span><span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">SampleCodeClassifier1</span><span style="color:#b83838">&#39;</span><span style="color:#888">,</span> LanguageCode<span style="color:#666">=</span><span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">en</span><span style="color:#b83838">&#39;</span><span style="color:#888">)</span>
-</code></pre></div><p>To run a custom classifier job:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">start_response <span style="color:#666">=</span> client<span style="color:#666">.</span>start_document_classification_job<span style="color:#888">(</span> InputDataConfig<span style="color:#666">=</span><span style="color:#888">{</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">S3Uri</span><span style="color:#b83838">&#39;</span><span style="color:#888">:</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">s3://S3Bucket/docclass/file name</span><span style="color:#b83838">&#39;</span><span style="color:#888">,</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">InputFormat</span><span style="color:#b83838">&#39;</span><span style="color:#888">:</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">ONE_DOC_PER_LINE</span><span style="color:#b83838">&#39;</span> <span style="color:#888">}</span><span style="color:#888">,</span> OutputDataConfig<span style="color:#666">=</span><span style="color:#888">{</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">S3Uri</span><span style="color:#b83838">&#39;</span><span style="color:#888">:</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">s3://S3Bucket/output</span><span style="color:#b83838">&#39;</span> <span style="color:#888">}</span><span style="color:#888">,</span> DataAccessRoleArn<span style="color:#666">=</span><span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">arn:aws:iam::account number:role/resource name</span><span style="color:#b83838">&#39;</span><span style="color:#888">,</span>
-DocumentClassifierArn<span style="color:#666">=</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">arn:aws:comprehend:region:account number:document-classifier/SampleCodeClassifier1</span><span style="color:#b83838">&#39;</span><span style="color:#888">)</span>
+<p>For example, you can do this to deploy a pytorch model:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#2838b0">import</span> <span style="color:#289870">ezsmdeploy</span>
 
-</code></pre></div><h3 id="some-other-notes">Some other notes</h3>
-<ul>
-<li>
-<p>To train a custom classifier, identify the classes you want to use for classification. For each class, for more accurate training, we recommend at least 50 documents or more for each class.</p>
-</li>
-<li>
-<p>When training your classifier, the data must be in a single .csv file. The format of the data will depend onwhich classifier mode you choose.</p>
-</li>
-<li>
-<p>After you train the custom classifier, you can analyze documents in either asynchronous (batch) or synchronous operations (real time)</p>
-</li>
-<li>
-<p>Multi-class mode supports up to 1 million examples containing up to 1000 unique classes.</p>
-</li>
-<li>
-<p>Multi-label mode supports up to 1 million examples containing up to 100 unique classes.</p>
-</li>
-</ul>
+ezonsm <span style="color:#666">=</span> ezsmdeploy<span style="color:#666">.</span>Deploy<span style="color:#888">(</span>model <span style="color:#666">=</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">model.pth</span><span style="color:#b83838">&#39;</span><span style="color:#888">,</span>
+              script <span style="color:#666">=</span> <span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">modelscript_pytorch.py</span><span style="color:#b83838">&#39;</span><span style="color:#888">,</span>
+              requirements <span style="color:#666">=</span> <span style="color:#888">[</span><span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">numpy</span><span style="color:#b83838">&#39;</span><span style="color:#888">,</span><span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">torch</span><span style="color:#b83838">&#39;</span><span style="color:#888">,</span><span style="color:#444"></span><span style="color:#b83838">&#39;</span><span style="color:#b83838">joblib</span><span style="color:#b83838">&#39;</span><span style="color:#888">]</span><span style="color:#888">)</span>
+</code></pre></div><p>Read more about the ezsmdeploy SDK <a href="https://pypi.org/project/ezsmdeploy/">here</a>, and find sample notebooks for Scikit-learn, Pytorch, Tensorflow and MXnet deployments <a href="https://github.com/aws-samples/easy-amazon-sagemaker-deployments/tree/master/notebooks">here</a></p>
 </div>
           
-          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 02 Mar 2020</p>
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 07 Feb 2020</p>
           <nav class="pagination mt-3">
             
             
@@ -1896,6 +1880,216 @@ DocumentClassifierArn<span style="color:#666">=</span> <span style="color:#444">
             
             
             
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
 
             
@@ -2111,216 +2305,6 @@ DocumentClassifierArn<span style="color:#666">=</span> <span style="color:#444">
             
             
             
-            
-            
-            
-
-            
-            
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
 
             
             
@@ -2370,10 +2354,10 @@ DocumentClassifierArn<span style="color:#666">=</span> <span style="color:#444">
             
 
             
-            <a class="nav nav-prev" href="https://master.d11arstd4fhlv6.amplifyapp.com/training/kmeans/"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">Kmeans training</span></a>
+            <a class="nav nav-prev" href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/blazingtext/"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">BlazingText Inference</span></a>
             
             
-            <a class="nav nav-next" href="https://master.d11arstd4fhlv6.amplifyapp.com/training/automl/"> <span class="d-none d-md-block">Autopilot Training</span><i class="ti-arrow-right ml-2"></i></a>
+            <a class="nav nav-next" href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/deepar/"> <span class="d-none d-md-block">DeepAR Inference</span><i class="ti-arrow-right ml-2"></i></a>
             
           </nav>
         </div>
