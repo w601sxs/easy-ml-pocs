@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SageMaker Object Detection inference on Easy ML PoCs</title>
-    <link>https://master.d11arstd4fhlv6.amplifyapp.com/inference/sageobjdetection/</link>
+    <link>/inference/sageobjdetection/</link>
     <description>Recent content in SageMaker Object Detection inference on Easy ML PoCs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Mar 2020 18:01:30 -0400</lastBuildDate>
     
-	<atom:link href="https://master.d11arstd4fhlv6.amplifyapp.com/inference/sageobjdetection/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/inference/sageobjdetection/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
