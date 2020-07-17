@@ -2,7 +2,7 @@
 # provide your domain here
 baseURL = ""
 # theme
-theme = "Dot"
+theme = "dot"
 # site title
 title = "Easy ML PoCs"
 # desable language
