@@ -1,6 +1,6 @@
 # easy-ml-pocs
 Site for organizing and searching for reusable code samples related to building ML PoCs on AWS.
-
+ 
 # General instructions:
 - The only thing you will have to touch, really, is the content folder. Add/ clone/ modify existing folders and .md markdown files.
 
@@ -30,7 +30,7 @@ Then, create content pages inside the previously created chapter. Here are two w
 
 4. Push update and wait for build
 
-## Syntax-highlighting code blocks
+## Syntax-highlighting code blocks 
 
 Insert code samples in a `{{< highlight >}}' block as shown below:
 
