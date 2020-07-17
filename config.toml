@@ -1,6 +1,6 @@
 ################################# Default configuration ###################
 # provide your domain here
-baseURL = "https://master.d11arstd4fhlv6.amplifyapp.com/"
+baseURL = "https://dot-submodule.d11arstd4fhlv6.amplifyapp.com/"
 # theme
 theme = "dot"
 # site title
