@@ -3,258 +3,258 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/usecases/objdetection/</loc>
+    <loc>/usecases/objdetection/</loc>
     <lastmod>2020-04-02T11:17:32-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/sageobjdetection/</loc>
+    <loc>/inference/sageobjdetection/</loc>
     <lastmod>2020-03-27T18:01:30-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/sageobjdetection/</loc>
+    <loc>/preprocessing/sageobjdetection/</loc>
     <lastmod>2020-03-27T18:01:14-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/sageobjdetection/</loc>
+    <loc>/training/sageobjdetection/</loc>
     <lastmod>2020-03-27T18:00:48-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/rekogobjdetection/</loc>
+    <loc>/training/rekogobjdetection/</loc>
     <lastmod>2020-03-27T15:05:25-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/forecast/</loc>
+    <loc>/inference/forecast/</loc>
     <lastmod>2020-03-27T12:04:32-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/rekogobjdetection/</loc>
+    <loc>/inference/rekogobjdetection/</loc>
     <lastmod>2020-03-27T11:52:53-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogobjdetection/</loc>
+    <loc>/preprocessing/rekogobjdetection/</loc>
     <lastmod>2020-03-22T16:41:13-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/comprehend/</loc>
+    <loc>/inference/comprehend/</loc>
     <lastmod>2020-03-11T14:54:49-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/personalize/</loc>
+    <loc>/inference/personalize/</loc>
     <lastmod>2020-03-11T14:54:49-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/forecast/</loc>
+    <loc>/training/forecast/</loc>
     <lastmod>2020-03-11T14:26:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/personalize/</loc>
+    <loc>/training/personalize/</loc>
     <lastmod>2020-03-04T13:19:02-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/blazingtext/</loc>
+    <loc>/training/blazingtext/</loc>
     <lastmod>2020-03-02T18:04:32-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/deepar/</loc>
+    <loc>/training/deepar/</loc>
     <lastmod>2020-03-02T18:04:32-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/kmeans/</loc>
+    <loc>/training/kmeans/</loc>
     <lastmod>2020-03-02T18:04:32-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/kmeans/</loc>
+    <loc>/preprocessing/kmeans/</loc>
     <lastmod>2020-03-02T17:46:34-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/comprehend/</loc>
+    <loc>/training/comprehend/</loc>
     <lastmod>2020-03-02T17:38:26-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/automl/</loc>
+    <loc>/inference/automl/</loc>
     <lastmod>2020-02-28T10:25:21-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/automl/</loc>
+    <loc>/training/automl/</loc>
     <lastmod>2020-02-28T10:25:21-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/xgboost/</loc>
+    <loc>/training/xgboost/</loc>
     <lastmod>2020-02-28T10:25:21-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/automl/</loc>
+    <loc>/preprocessing/automl/</loc>
     <lastmod>2020-02-26T11:20:21-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/deepar/</loc>
+    <loc>/preprocessing/deepar/</loc>
     <lastmod>2020-02-26T10:52:58-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/personalize/</loc>
+    <loc>/preprocessing/personalize/</loc>
     <lastmod>2020-02-26T00:12:50-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/selecting/</loc>
+    <loc>/preprocessing/selecting/</loc>
     <lastmod>2020-02-11T23:23:17-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/splittesttrain/</loc>
+    <loc>/preprocessing/splittesttrain/</loc>
     <lastmod>2020-02-11T23:23:17-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/uploadtos3/</loc>
+    <loc>/preprocessing/uploadtos3/</loc>
     <lastmod>2020-02-07T01:00:21-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/forecast/</loc>
+    <loc>/preprocessing/forecast/</loc>
     <lastmod>2020-02-07T00:15:27-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/blazingtext/</loc>
+    <loc>/inference/blazingtext/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/deepar/</loc>
+    <loc>/inference/deepar/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/usecases/pneumonia/</loc>
+    <loc>/usecases/pneumonia/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/usecases/pneumoniasage/</loc>
+    <loc>/usecases/pneumoniasage/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/rekogscenes/</loc>
+    <loc>/inference/rekogscenes/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogscenes/</loc>
+    <loc>/preprocessing/rekogscenes/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/rekogscenes/</loc>
+    <loc>/training/rekogscenes/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/usecases/rossman/</loc>
+    <loc>/usecases/rossman/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/sagescenes/</loc>
+    <loc>/inference/sagescenes/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/sagescenes/</loc>
+    <loc>/preprocessing/sagescenes/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/sagescenes/</loc>
+    <loc>/training/sagescenes/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/kmeans/</loc>
+    <loc>/inference/kmeans/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/usecases/</loc>
+    <loc>/usecases/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/xgboost/</loc>
+    <loc>/inference/xgboost/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/xgboost/</loc>
+    <loc>/preprocessing/xgboost/</loc>
     <lastmod>2020-02-07T00:15:15-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/blazingtext/</loc>
+    <loc>/preprocessing/blazingtext/</loc>
     <lastmod>2020-02-07T00:15:04-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/comprehend/</loc>
+    <loc>/preprocessing/comprehend/</loc>
     <lastmod>2020-02-07T00:14:57-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/</loc>
+    <loc>/preprocessing/</loc>
     <lastmod>2020-02-07T00:11:03-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/training/</loc>
+    <loc>/training/</loc>
     <lastmod>2020-02-07T00:11:03-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/inference/</loc>
+    <loc>/inference/</loc>
     <lastmod>2020-02-07T00:11:03-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/categories/</loc>
+    <loc>/categories/</loc>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/</loc>
+    <loc>/contact/</loc>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/faq/</loc>
+    <loc>/</loc>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/contact/</loc>
+    <loc>/faq/</loc>
   </url>
   
   <url>
-    <loc>https://master.d11arstd4fhlv6.amplifyapp.com/tags/</loc>
+    <loc>/tags/</loc>
   </url>
   
 </urlset>

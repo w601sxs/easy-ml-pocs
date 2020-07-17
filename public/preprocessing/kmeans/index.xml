@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kmeans preprocessing on Easy ML PoCs</title>
-    <link>https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/kmeans/</link>
+    <link>/preprocessing/kmeans/</link>
     <description>Recent content in Kmeans preprocessing on Easy ML PoCs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Mar 2020 17:46:34 -0500</lastBuildDate>
     
-	<atom:link href="https://master.d11arstd4fhlv6.amplifyapp.com/preprocessing/kmeans/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/preprocessing/kmeans/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

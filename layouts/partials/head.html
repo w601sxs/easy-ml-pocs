@@ -10,6 +10,7 @@
   
   {{ "<!-- ** Plugins Needed for the Project ** -->" | safeHTML }}
   {{ "<!-- Bootstrap -->" | safeHTML }}
+    <link href="{{ .Site.BaseURL }}/js/add-on.css" rel="stylesheet" type="css" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ `plugins/bootstrap/bootstrap.min.css` | absURL }}">
 
   {{ "<!-- themefy-icon -->" | safeHTML }}
@@ -25,6 +26,11 @@
   <link href="https://fonts.googleapis.com/css?family={{replace .Site.Params.font_family ' ' '+' | title}}:300,400,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
 
   
   <style>
@@ -57,5 +63,6 @@
 {{ "<!-- highlight -->" | safeHTML }}
 <script src="{{ `plugins/highlight/highlight.pack.js` | absURL }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
 
 </head>

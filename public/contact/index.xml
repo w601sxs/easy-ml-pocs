@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Got Any Questions on Easy ML PoCs</title>
-    <link>https://master.d11arstd4fhlv6.amplifyapp.com/contact/</link>
-    <description>Recent content in Got Any Questions on Easy ML PoCs</description>
+    <title>Contribute a use case or contact us for help. on Easy ML PoCs</title>
+    <link>/contact/</link>
+    <description>Recent content in Contribute a use case or contact us for help. on Easy ML PoCs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://master.d11arstd4fhlv6.amplifyapp.com/contact/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/contact/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -1,5 +1,5 @@
 ---
-title: "Got Any Questions"
+title: "Contribute a use case or contact us for help."
 draft: false
 ---
 
