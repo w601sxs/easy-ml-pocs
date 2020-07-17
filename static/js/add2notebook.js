@@ -7,7 +7,7 @@
 
   if (sessionStorage.getItem("notebookJson") === null) {
     var notebookJson = { cells:[{cell_type: "markdown",metadata: {},source: [
-    "# Easy ML PoCs Genrated Notebook\n",
+    "# Easy ML PoCs Generated Notebook\n",
     "\n",
     "Here are the cells you added to the notebook\n"]}], metadata: 
     {kernelspec:{display_name: "conda_python3",language: "python",
