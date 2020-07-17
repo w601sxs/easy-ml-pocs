@@ -1,5 +1,6 @@
 # easy-ml-pocs 
-Site for organizing and searching for reusable code samples related to building ML PoCs on AWS.
+_Easy Machine Learning Proof of Concepts_
+Easy ML PoCs is a website/tool for use by people who need help navigating the AI/ML stack on AWS for their custom use cases. Customers who typically find it difficult to
 
 # General instructions:
 - The only thing you will have to touch, really, is the content folder. Add/ clone/ modify existing folders and .md markdown files.
@@ -46,6 +47,15 @@ Alternatively, use the simple git syntax
 ```python
 # INSERT CODE HERE
 ``` 
+
+
+# License
+MIT-0
+
+# Note on linked datasets
+The "use cases" section uses the following chest xray dataset:
+
+"Kermany, Daniel; Zhang, Kang; Goldbaum, Michael (2018), “Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification”, Mendeley Data, v2" used in examples under CC BY 4.0.
 
 ## Remember to remove draft mode
 On the page you edited, mark draft: false (will be true by default)
