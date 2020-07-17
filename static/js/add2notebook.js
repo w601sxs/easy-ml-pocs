@@ -8,8 +8,8 @@
   function flashCopyMessage(el, msg) {
     el.textContent = msg;
     setTimeout(() => {
-      el.textContent = "Copy";
-    }, 1000);
+      el.textContent = "Add to Notebook";
+    }, 1500);
   }
 
   function selectText(node) {
@@ -29,23 +29,24 @@
   function addCopyButton(containerEl) {
     let copyBtn = document.createElement("button");
     copyBtn.className = "highlight-copy-btn";
-    copyBtn.textContent = "Copy";
+    copyBtn.textContent = "Add to Notebook";
 
-    let codeEl = containerEl.firstElementChild;
+    let codeEl = containerEl.firstElementChild.firstElementChild;
     copyBtn.addEventListener('click', () => {
       try {
         let selection = selectText(codeEl);
         document.execCommand('copy');
         selection.removeAllRanges();
 
-        flashCopyMessage(copyBtn, 'Copied!')
+        flashCopyMessage(copyBtn, 'Added!')
       } catch(e) {
         console && console.log(e);
         flashCopyMessage(copyBtn, 'Failed :\'(')
       }
     });
 
-    containerEl.appendChild(copyBtn);
+    containerEl.firstElementChild.appendChild(copyBtn);
+
   }
 
   // Add copy button to code blocks

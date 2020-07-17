@@ -1,12 +1,10 @@
 ################################# Default configuration ###################
 # provide your domain here
-baseURL = "https://master.d11arstd4fhlv6.amplifyapp.com/"
+baseURL = ""
 # theme
 theme = "dot"
 # site title
 title = "Easy ML PoCs"
-# desable language
-disableLanguages = []
 
 
 [markup]
