@@ -1,7 +1,8 @@
 ---
-title: "Kmeans training"
+title: "SageMaker Kmeans training"
 date: 2020-03-02T18:04:32-05:00
 draft: false
+algo: [kmeans]
 ---
 
 Make sure you saw [this link](../../preprocessing/kmeans) for preprocessing first.

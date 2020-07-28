@@ -2,6 +2,7 @@
 title: "Forecast inference"
 date: 2020-03-27T12:04:32-04:00
 draft: False
+algo: [forecast]
 ---
 
 Make sure you saw [this link](../training/forecast) for training first.

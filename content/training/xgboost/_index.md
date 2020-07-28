@@ -2,6 +2,7 @@
 title: "Xgboost Training"
 date: 2020-02-28T10:25:21-06:00
 draft: false
+algo: [xgboost]
 ---
 
 Make sure you saw [this link](../../preprocessing/xgboost) for preprocessing first.

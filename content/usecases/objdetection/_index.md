@@ -2,6 +2,7 @@
 title: "Object detection using Pascal VOC dataset with SageMaker"
 date: 2020-04-02T11:17:32-04:00
 draft: False
+algo: sageobj
 ---
 
 The Amazon SageMaker Object Detection algorithm detects and classifies objects in images using a single deep neural network. It is a supervised learning algorithm that takes images as input and identifies all instances of objects within the image scene. The object is categorized into one of the classes in a specified collection with a confidence score that it belongs to the class. Its location and scale in the image are indicated by a rectangular bounding box. It uses the Single Shot multibox Detector (SSD) framework and supports two base networks: VGG and ResNet. The network can be trained from scratch, or trained with models that have been pre-trained on the ImageNet dataset.

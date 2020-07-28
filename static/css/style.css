@@ -4552,6 +4552,11 @@ a.box:active {
   padding-left: 10px;
 }
 
+:before {color: #A0002E; display: inline-block; font: normal 20px/20px helvetica; width: 30px; }
+a {color: dodgerblue;}
+
+.bigarrow:before {content: "\27BD";}
+
 .menu-label {
   color: #aeb1b5;
   font-size: 11px;

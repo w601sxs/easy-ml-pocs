@@ -2,6 +2,7 @@
 title: "Blazingtext preprocessing"
 date: 2020-02-07T00:15:04-05:00
 draft: false
+algo: [blazingtext]
 ---
 
 From the Sagemaker example [here](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/introduction_to_amazon_algorithms/blazingtext_text_classification_dbpedia/blazingtext_text_classification_dbpedia.ipynb)...

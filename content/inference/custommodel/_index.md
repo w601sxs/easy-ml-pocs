@@ -2,6 +2,7 @@
 title: "Custom SageMaker model Inference"
 date: 2020-02-07T00:15:15-05:00
 draft: false
+algo: [sage]
 ---
 
 [Ezsmdeploy python SDK](https://pypi.org/project/ezsmdeploy/) helps you easily deploy Machine learning models and provides a rich set of features such as passing one or more model files (yes, through multi-model deployments), automatically choosing an instance based on model size or based on a budget, and load testing endpoints using an intuitive API. Ezsmdeploy uses the SageMaker Python SDK, which is an open source library for training and deploying machine learning models on Amazon SageMaker.

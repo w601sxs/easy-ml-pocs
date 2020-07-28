@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+  <meta charset="utf-8">
+  <title>SageMaker Object Detection preprocessing</title>
+
+  <meta name="generator" content="Hugo 0.64.0" />
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+    <link href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com//js/add-on.css" rel="stylesheet" type="css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/plugins/themify-icons/themify-icons.css">
+
+  <!-- highlight -->
+  <link rel="stylesheet" href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/plugins/highlight/hybrid.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
+
+  
+  <style>
+  :root{
+    --primary-color:#FF9900;
+    --secondary-color:#f9f9f9;
+    --text-color:#232F3E;
+    --text-color-dark:#161E2D;
+    --white-color:#ffffff;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link rel="stylesheet" href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/css/style.min.css" media="screen">
+
+<!-- jquiry -->
+<script src="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</head>
+<body>
+  
+  <!-- navigation -->
+  <header class="shadow-bottom sticky-top bg-white">
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light">
+  <a class="navbar-brand" href="/">
+    
+    
+    
+    Easy ML PoCs
+    
+  </a>
+  
+  <input id="search" class="small-form-control" placeholder="Search ..."  maxlength="30" size="30">
+  
+
+  <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse text-center" id="navigation">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/">Home</a>
+      </li>
+      
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          code
+        </a>
+        <div class="dropdown-menu">
+          
+          <a class="dropdown-item" href="/preprocessing">Preprocessing</a>
+          
+          <a class="dropdown-item" href="/training">Training</a>
+          
+          <a class="dropdown-item" href="/inference">Inference</a>
+          
+        </div>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/usecases">Use cases</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/contact">contact</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/faq">Faq</a>
+      </li>
+      
+      
+    </ul>
+    
+
+    
+        
+        
+        
+        <script>
+          $(function() {
+          var projects = [
+            
+            {
+              value: "Object detection using Pascal VOC dataset with SageMaker",
+              label: "Object detection using Pascal VOC dataset with SageMaker",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/usecases\/objdetection\/"
+            },
+            
+            {
+              value: "SageMaker Object Detection inference",
+              label: "SageMaker Object Detection inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/sageobjdetection\/"
+            },
+            
+            {
+              value: "SageMaker Object Detection preprocessing",
+              label: "SageMaker Object Detection preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/sageobjdetection\/"
+            },
+            
+            {
+              value: "SageMaker Object Detection training",
+              label: "SageMaker Object Detection training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/sageobjdetection\/"
+            },
+            
+            {
+              value: "Rekognition Object Detection training",
+              label: "Rekognition Object Detection training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/rekogobjdetection\/"
+            },
+            
+            {
+              value: "Forecast inference",
+              label: "Forecast inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/forecast\/"
+            },
+            
+            {
+              value: "Rekognition Object Detection inference",
+              label: "Rekognition Object Detection inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/rekogobjdetection\/"
+            },
+            
+            {
+              value: "Rekognition Object Detection preprocessing",
+              label: "Rekognition Object Detection preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/rekogobjdetection\/"
+            },
+            
+            {
+              value: "Comprehend custom inference",
+              label: "Comprehend custom inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/comprehend\/"
+            },
+            
+            {
+              value: "Personalize inference",
+              label: "Personalize inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/personalize\/"
+            },
+            
+            {
+              value: "Forecast training",
+              label: "Forecast training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/forecast\/"
+            },
+            
+            {
+              value: "Personalize training",
+              label: "Personalize training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/personalize\/"
+            },
+            
+            {
+              value: "BlazingText training",
+              label: "BlazingText training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/blazingtext\/"
+            },
+            
+            {
+              value: "DeepAR training",
+              label: "DeepAR training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/deepar\/"
+            },
+            
+            {
+              value: "Kmeans training",
+              label: "Kmeans training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/kmeans\/"
+            },
+            
+            {
+              value: "Kmeans preprocessing",
+              label: "Kmeans preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/kmeans\/"
+            },
+            
+            {
+              value: "Comprehend custom training",
+              label: "Comprehend custom training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/comprehend\/"
+            },
+            
+            {
+              value: "Autopilot Inference",
+              label: "Autopilot Inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/automl\/"
+            },
+            
+            {
+              value: "Autopilot Training",
+              label: "Autopilot Training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/automl\/"
+            },
+            
+            {
+              value: "Xgboost Training",
+              label: "Xgboost Training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/xgboost\/"
+            },
+            
+            {
+              value: "Autopilot preprocessing",
+              label: "Autopilot preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/automl\/"
+            },
+            
+            {
+              value: "DeepAR preprocessing",
+              label: "DeepAR preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/deepar\/"
+            },
+            
+            {
+              value: "Personalize preprocessing",
+              label: "Personalize preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/personalize\/"
+            },
+            
+            {
+              value: "Select, drop or extract Columns",
+              label: "Select, drop or extract Columns",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/selecting\/"
+            },
+            
+            {
+              value: "Split dataset to Train and Test",
+              label: "Split dataset to Train and Test",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/splittesttrain\/"
+            },
+            
+            {
+              value: "Upload to s3",
+              label: "Upload to s3",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/uploadtos3\/"
+            },
+            
+            {
+              value: "Forecast preprocessing",
+              label: "Forecast preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/forecast\/"
+            },
+            
+            {
+              value: "BlazingText Inference",
+              label: "BlazingText Inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/blazingtext\/"
+            },
+            
+            {
+              value: "Custom SageMaker model Inference",
+              label: "Custom SageMaker model Inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/custommodel\/"
+            },
+            
+            {
+              value: "DeepAR Inference",
+              label: "DeepAR Inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/deepar\/"
+            },
+            
+            {
+              value: "Pneumonia detection from Chest X-ray images using Rekognition Custom Labels",
+              label: "Pneumonia detection from Chest X-ray images using Rekognition Custom Labels",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/usecases\/pneumonia\/"
+            },
+            
+            {
+              value: "Pneumonia detection from Chest X-ray images using SageMaker",
+              label: "Pneumonia detection from Chest X-ray images using SageMaker",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/usecases\/pneumoniasage\/"
+            },
+            
+            {
+              value: "Rekognition Classification inference",
+              label: "Rekognition Classification inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/rekogscenes\/"
+            },
+            
+            {
+              value: "Rekognition Classification preprocessing",
+              label: "Rekognition Classification preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/rekogscenes\/"
+            },
+            
+            {
+              value: "Rekognition Classification training",
+              label: "Rekognition Classification training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/rekogscenes\/"
+            },
+            
+            {
+              value: "Rossman store sales forecast",
+              label: "Rossman store sales forecast",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/usecases\/rossman\/"
+            },
+            
+            {
+              value: "SageMaker Image Classification inference",
+              label: "SageMaker Image Classification inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/sagescenes\/"
+            },
+            
+            {
+              value: "SageMaker Image Classification preprocessing",
+              label: "SageMaker Image Classification preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/sagescenes\/"
+            },
+            
+            {
+              value: "SageMaker Image Classification training",
+              label: "SageMaker Image Classification training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/sagescenes\/"
+            },
+            
+            {
+              value: "SageMaker Kmeans inference",
+              label: "SageMaker Kmeans inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/kmeans\/"
+            },
+            
+            {
+              value: "Use cases",
+              label: "Use cases",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/usecases\/"
+            },
+            
+            {
+              value: "Xgboost Inference",
+              label: "Xgboost Inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/xgboost\/"
+            },
+            
+            {
+              value: "Xgboost preprocessing",
+              label: "Xgboost preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/xgboost\/"
+            },
+            
+            {
+              value: "Blazingtext preprocessing",
+              label: "Blazingtext preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/blazingtext\/"
+            },
+            
+            {
+              value: "Comprehend custom preprocessing",
+              label: "Comprehend custom preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/comprehend\/"
+            },
+            
+            {
+              value: "1. Preprocessing",
+              label: "1. Preprocessing",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/preprocessing\/"
+            },
+            
+            {
+              value: "2. Training",
+              label: "2. Training",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/training\/"
+            },
+            
+            {
+              value: "3. Inference",
+              label: "3. Inference",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/inference\/"
+            },
+            
+            {
+              value: "Categories",
+              label: "Categories",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/categories\/"
+            },
+            
+            {
+              value: "Contribute a use case or contact us for help.",
+              label: "Contribute a use case or contact us for help.",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/contact\/"
+            },
+            
+            {
+              value: "Easy ML PoCs",
+              label: "Easy ML PoCs",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/"
+            },
+            
+            {
+              value: "Frequently Asked Questions",
+              label: "Frequently Asked Questions",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/faq\/"
+            },
+            
+            {
+              value: "Tags",
+              label: "Tags",
+              url:"https:\/\/add2notebook.d11arstd4fhlv6.amplifyapp.com\/tags\/"
+            },
+            
+          ];
+          $( "#search" ).autocomplete({
+              minLength: 0,
+              source: projects,
+              focus: function( event, ui ) {
+                $( "#search" ).val( ui.item.label );
+                return false;
+              },
+              select: function( event, ui ) {
+                $( "#search" ).val( ui.item.label );
+                $( "#project-id" ).val( ui.item.value );
+                return false;
+              }
+          })
+          .data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+            return $( "<li>" )
+            .append( "<a href=" + item.url + " + \" &quot;\" +  >" + item.label + "</a>" )
+            .appendTo( ul );
+          };
+          });
+        </script>
+  </div>
+</nav>
+    </div>
+  </header>
+  <!-- /navigation -->
+  
+  <div id="content">
+
+<!-- details page -->
+<section class="single section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="mb-5 bg-white p-4 sticky-top top-100">
+          <ul class="list-styled">
+            
+            <a class="d-block h4 back-btn" href="/"></a>
+            
+            
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/" title="Use cases" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/">
+    Use cases
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/objdetection/" title="Object detection using Pascal VOC dataset with SageMaker" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/objdetection/">
+    Object detection using Pascal VOC dataset with SageMaker
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/pneumonia/" title="Pneumonia detection from Chest X-ray images using Rekognition Custom Labels" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/pneumonia/">
+    Pneumonia detection from Chest X-ray images using Rekognition Custom Labels
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/pneumoniasage/" title="Pneumonia detection from Chest X-ray images using SageMaker" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/pneumoniasage/">
+    Pneumonia detection from Chest X-ray images using SageMaker
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/rossman/" title="Rossman store sales forecast" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/usecases/rossman/">
+    Rossman store sales forecast
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/" title="1. Preprocessing" class="sidelist
+  parent
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/">
+    1. Preprocessing
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/sageobjdetection/" title="SageMaker Object Detection preprocessing" class="sidelist
+  parent
+  active
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/sageobjdetection/">
+    SageMaker Object Detection preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogobjdetection/" title="Rekognition Object Detection preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogobjdetection/">
+    Rekognition Object Detection preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/kmeans/" title="Kmeans preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/kmeans/">
+    Kmeans preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/automl/" title="Autopilot preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/automl/">
+    Autopilot preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/deepar/" title="DeepAR preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/deepar/">
+    DeepAR preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/personalize/" title="Personalize preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/personalize/">
+    Personalize preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/selecting/" title="Select, drop or extract Columns" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/selecting/">
+    Select, drop or extract Columns
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/splittesttrain/" title="Split dataset to Train and Test" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/splittesttrain/">
+    Split dataset to Train and Test
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/uploadtos3/" title="Upload to s3" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/uploadtos3/">
+    Upload to s3
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/forecast/" title="Forecast preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/forecast/">
+    Forecast preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogscenes/" title="Rekognition Classification preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogscenes/">
+    Rekognition Classification preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/sagescenes/" title="SageMaker Image Classification preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/sagescenes/">
+    SageMaker Image Classification preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/xgboost/" title="Xgboost preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/xgboost/">
+    Xgboost preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/blazingtext/" title="Blazingtext preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/blazingtext/">
+    Blazingtext preprocessing
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/comprehend/" title="Comprehend custom preprocessing" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/comprehend/">
+    Comprehend custom preprocessing
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/" title="2. Training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/">
+    2. Training
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/sageobjdetection/" title="SageMaker Object Detection training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/sageobjdetection/">
+    SageMaker Object Detection training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/rekogobjdetection/" title="Rekognition Object Detection training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/rekogobjdetection/">
+    Rekognition Object Detection training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/forecast/" title="Forecast training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/forecast/">
+    Forecast training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/personalize/" title="Personalize training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/personalize/">
+    Personalize training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/blazingtext/" title="BlazingText training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/blazingtext/">
+    BlazingText training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/deepar/" title="DeepAR training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/deepar/">
+    DeepAR training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/kmeans/" title="Kmeans training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/kmeans/">
+    Kmeans training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/comprehend/" title="Comprehend custom training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/comprehend/">
+    Comprehend custom training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/automl/" title="Autopilot Training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/automl/">
+    Autopilot Training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/xgboost/" title="Xgboost Training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/xgboost/">
+    Xgboost Training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/rekogscenes/" title="Rekognition Classification training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/rekogscenes/">
+    Rekognition Classification training
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/sagescenes/" title="SageMaker Image Classification training" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/training/sagescenes/">
+    SageMaker Image Classification training
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/" title="3. Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/">
+    3. Inference
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/sageobjdetection/" title="SageMaker Object Detection inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/sageobjdetection/">
+    SageMaker Object Detection inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/forecast/" title="Forecast inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/forecast/">
+    Forecast inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/rekogobjdetection/" title="Rekognition Object Detection inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/rekogobjdetection/">
+    Rekognition Object Detection inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/comprehend/" title="Comprehend custom inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/comprehend/">
+    Comprehend custom inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/personalize/" title="Personalize inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/personalize/">
+    Personalize inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/automl/" title="Autopilot Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/automl/">
+    Autopilot Inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/blazingtext/" title="BlazingText Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/blazingtext/">
+    BlazingText Inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/custommodel/" title="Custom SageMaker model Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/custommodel/">
+    Custom SageMaker model Inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/deepar/" title="DeepAR Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/deepar/">
+    DeepAR Inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/rekogscenes/" title="Rekognition Classification inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/rekogscenes/">
+    Rekognition Classification inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/sagescenes/" title="SageMaker Image Classification inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/sagescenes/">
+    SageMaker Image Classification inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/kmeans/" title="SageMaker Kmeans inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/kmeans/">
+    SageMaker Kmeans inference
+  </a>
+  
+  
+
+
+    
+    
+    
+    
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/xgboost/" title="Xgboost Inference" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/inference/xgboost/">
+    Xgboost Inference
+  </a>
+  
+  
+
+
+    
+    
+  </ul>
+</li>
+
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/contact/" title="Contribute a use case or contact us for help." class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/contact/">
+    Contribute a use case or contact us for help.
+  </a>
+  
+  
+
+
+            
+            
+
+
+
+
+<li data-nav-id="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/faq/" title="Frequently Asked Questions" class="sidelist
+  
+  
+  ">
+  <a href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/faq/">
+    Frequently Asked Questions
+  </a>
+  
+  
+
+
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-5 bg-white">
+          <h2 class="mb-5">SageMaker Object Detection preprocessing</h2>
+          
+          <div class="content"><p>The Amazon SageMaker Object Detection algorithm detects and classifies objects in images using a single deep neural network. It is a supervised learning algorithm that takes images as input and identifies all instances of objects within the image scene.</p>
+<p>If you are looking to classify images or scenes, check out <a href="../sagescenes">SageMaker Image Classification preprocessing</a></p>
+<h3 id="upload-data-to-s3">Upload data to S3</h3>
+<p>To make the process easy, split your dataset to be used for training and testing/validation. Generally, the split proportion would be 80% training data and 20% testing/validation data. You can upload and organize these images in a two separate folders in S3 (one for training and other for testing/validation).</p>
+<h3 id="create-a-dataset">Create a dataset</h3>
+<p>We will make use of SageMaker Ground Truth for labeling jobs to build training datasets.</p>
+<blockquote>
+<p>Navigate to SageMaker on the console and click &ldquo;Labeling jobs&rdquo; under Ground Truth:</p>
+</blockquote>
+<p><img src="/images/groundtruth-page.png" alt=""></p>
+<blockquote>
+<p>Click on &ldquo;Create labeling jobs&rdquo;</p>
+</blockquote>
+<p><img src="/images/gt-create-labeling-job.png" alt=""></p>
+<blockquote>
+<p>Put in details such as job name, input dataset location, output dataset location, and IAM Role</p>
+</blockquote>
+<p><img src="/images/gt-job-details-1.png" alt=""></p>
+<blockquote>
+<p>If you do not already have a manifest file for your input dataset, click on &ldquo;Create manifest file&rdquo; under Input dataset location</p>
+</blockquote>
+<p><img src="/images/input-dataset-manifest-file.png" alt=""></p>
+<blockquote>
+<p>Enter the S3 location for input dataset and click &ldquo;Create&rdquo;</p>
+</blockquote>
+<p><img src="/images/input-dataset-manifest-file-1.png" alt=""></p>
+<blockquote>
+<p>Once the manifest file is created, click on &ldquo;Use this manifest&rdquo;</p>
+</blockquote>
+<p><img src="/images/input-dataset-manifest-file-2.png" alt=""></p>
+<blockquote>
+<p>Continuing on the same page, select &ldquo;Image&rdquo; under Task category and select &ldquo;Bounding box&rdquo; under Task selection. Click Next.</p>
+</blockquote>
+<p><img src="/images/gt-job-details-2.png" alt=""></p>
+<blockquote>
+<p>Ground Truth allows multiple worker types (mechanical turk, private, vendor managed). In this example, we will use &ldquo;Private&rdquo; workers. Fill in the appropriate details.</p>
+</blockquote>
+<p><img src="/images/gt-worker-config.png" alt=""></p>
+<blockquote>
+<p>Scrolling down, you need to add brief description for workers to understand the job as well as labels. Click on &ldquo;Create&rdquo;.</p>
+</blockquote>
+<p><img src="/images/gt-worker-config-1.png" alt=""></p>
+<blockquote>
+<p>Labeling job will be created for Task Type &ldquo;Bounding Box&rdquo;</p>
+</blockquote>
+<p><img src="/images/labeling-job.png" alt=""></p>
+<blockquote>
+<p>The workers will receive email to perform the labeling</p>
+</blockquote>
+<p><img src="/images/worker-email.png" alt=""></p>
+<blockquote>
+<p>The first time they log in the portal using the credentials provided in the email, they will be asked to change the password. Once they log in the portal, they will be presented with the job. Click on &ldquo;Start working&rdquo;.</p>
+</blockquote>
+<p><img src="/images/worker-portal.png" alt=""></p>
+<blockquote>
+<p>The worker will be presented with images they need to label and draw bounding box.</p>
+</blockquote>
+<p><img src="/images/draw-bounding-box-1.png" alt=""></p>
+<blockquote>
+<p>The worker needs to select the label first and draw bounding box around the object.</p>
+</blockquote>
+<p><img src="/images/draw-bounding-box-2.png" alt=""></p>
+<blockquote>
+<p>If the image has multiple object, the worker needs to select labels and draw bounding box around all the objects.</p>
+</blockquote>
+<p><img src="/images/draw-bounding-box-multiple.png" alt=""></p>
+<blockquote>
+<p>Once all the images are labeled, worker can log out of the portal.</p>
+</blockquote>
+<p><img src="/images/worker-portal-job-done.png" alt=""></p>
+<blockquote>
+<p>The labeling job on SageMaker console will show status as &ldquo;Complete&rdquo;</p>
+</blockquote>
+<p><img src="/images/labeling-job-done.png" alt="">
+<img src="/images/labeling-job-summary.png" alt=""></p>
+</div>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 27 Mar 2020</p>
+          <div>
+          <h4>Related content:</h4>
+          
+          Number of related pages: 0<br>
+          
+
+          
+
+          Number of related pages: 0<br>
+
+
+
+
+          </div>
+          <nav class="pagination mt-3">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <a class="nav nav-prev" href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">1. Preprocessing</span></a>
+            
+            
+            <a class="nav nav-next" href="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/preprocessing/rekogobjdetection/"> <span class="d-none d-md-block">Rekognition Object Detection preprocessing</span><i class="ti-arrow-right ml-2"></i></a>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- /details page -->
+
+
+
+<script src = "/js/add-on.js"></script>
+<script src = "/js/add2notebook.js"></script>
+<link href="/js/add-on.css" rel="stylesheet" type="css" crossorigin="anonymous">
+
+
+
+  </div><!-- footer -->
+<footer class="section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-md-left text-center">
+       <p></p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline mb-3">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-facebook"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-vimeo-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-linkedin"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://add2notebook.d11arstd4fhlv6.amplifyapp.com/js/script.min.js"></script><!-- nbpartial -->
+<style>
+*{padding:0;margin:0;}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#FF9900;
+	color:#ffffff;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	z-index:10002;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
+ 
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,0);
+    cursor:pointer;
+    display:none;
+    height:80%;
+    position:fixed;
+    right:10%;
+    vertical-align: middle;
+    top:10%;
+    z-index:10000;
+}
+
+.hover_bkgr_fricc > div {
+    background-color: #ffffff;
+    box-shadow: 5px 5px 30px #555;
+    display: inline-block;
+    height:100%;
+    min-width: 110%;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 20px;
+    padding: 2% 2%;
+}
+
+.trigger_popup_fricc {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#x {
+    position: absolute;
+    background: grey;
+    color: white;
+    border:black;
+    top: 5px;
+    right: -20px;
+    z-index: 10003;
+    border-radius: 50%;
+    width:30px;
+    height:30px;
+}
+
+.second-row { flex-grow: 1; border: none; margin: 0; padding: 0; }
+.frame {
+  flex: 1 0 auto;
+  border: 0;
+  display:block;
+  width:100%;
+  height:100%;
+}
+.wrap {
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+  overflow:hidden;
+}
+
+
+ 
+
+</style>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js" integrity="sha256-+oeQRyZyY2StGafEsvKyDuEGNzJWAbWqiO2L/ctxF6c=" crossorigin="anonymous"></script>
+
+
+
+<script>
+
+$(window).on('load', function(){ 
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+
+function clickme(){
+    
+    if (sessionStorage.getItem("notebookJson") != null) 
+    {
+      var obj = sessionStorage.getItem("notebookJson");
+      var data = "text/json;charset=utf-8," + encodeURIComponent(obj);
+      var today = new Date();
+      var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      var time = today.getHours() + "-" + today.getMinutes() + "-" + today.getSeconds();
+      var CurrentDateTime = date+time;
+      console.log('time is ' + CurrentDateTime)
+      $('<a id = "downloadme" href="data:' + data + '" download="easymlpoc-notebook-'+CurrentDateTime +'.ipynb"></a>').appendTo('#container');
+      document.getElementById("downloadme").click();
+    };
+    console.log('downloaded!');
+}
+
+
+
+</script>
+
+<div id="container">
+<a class="float trigger_popup_fricc" id="link2" onclick="clickme()"><i class="fa fa-download my-float"></i></a>
+</div>
+
+<!-- nbpartial -->
+
+
+</body>
+
+
+</html>

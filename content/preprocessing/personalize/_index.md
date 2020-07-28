@@ -2,6 +2,7 @@
 title: "Personalize preprocessing"
 date: 2020-02-26T00:12:50-05:00
 draft: false
+algo: [personalize]
 ---
 
 ### Import data

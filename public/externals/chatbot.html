@@ -1,0 +1,246 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BotUI - Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css" />
+  </head>
+  <body>
+    <div class="botui-app-container" id="botui-app">
+      <bot-ui></bot-ui>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.0.5/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.js"></script>
+    <script>
+var botui = new BotUI('botui-app') // id of container
+var results = {}
+
+botui.message.bot({ // show first message
+  delay: 200,
+  content: 'Hi!'
+}).then(() => {
+  return message(500,'What kind of data do you have?')
+}).then(() => {
+  return my2buttons('Tabular / Text data','tabular','Images','images')
+}).then(res => {
+  
+  if (res.value=='tabular') {
+    return message(1000,`Great, you have tabular data! !(table) <br><br> Is your data in S3 as CSV files?`).then(
+        res => {return my2buttons('yes', 'yes', 'no', 'no')}).then(
+        res => {results.datains3 = res.value}).then(() => {return tabulardata(botui)});
+  } else {
+    return message(1000,`Great, you have images! !(image) `).then(()=> {return message(1000,'Is your data in S3?')}).then(
+        res => {return my2buttons('yes', 'yes', 'no', 'no')}).then(
+        res => {results.datains3 = res.value}).then(() => {return imagedata(botui)});
+  }  
+});
+
+function tabulardata(botui)
+{
+  results.datatype = 'tabular'
+  message(1000,'What are you trying to predict?').then(() => 
+  {
+    return my5buttons('Predict a Number','number','Predict a Category','category','Group similar rows','clustering','Recommend an item','recommend','I need help deciding','help').then(res => {
+      results.problem = res.value;
+      if(results.problem=='number' || results.problem=='category'){
+        return message(1000,'Does your data have any of the following special characteristics?').then(
+          my3buttons('column with time stamps','timeseries','column with free/raw text','text','no such special characteristics','na').then(res => {
+            results.special = res.value;
+            console.log(results)
+            if(results.special=='timeseries' && results.problem=='number'){
+              return(specialtabular(botui,results))
+            }else if(results.special=='text'){
+              return(specialtabular(botui,results))
+            }else if (results.special=='timeseries' && results.problem=='category'){
+              return(message(1000,'You may need to use a custom algorithm to predict a category based on a time series on inputs. We do not cover this case yet, but feel free to reach out to us via the contact page for help!'))
+            }else {specialtabular(botui,results)}
+          })
+          );
+      }else if (res.value=='clustering'){
+        message(1000, 'Great! Try searching for "Kmeans" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered) ').then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      }else if (res.value=='recommend'){
+        message(1000, 'Great! Try searching for "Personalize" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered) <br><br> Also take a look at ["Personalize service limits"](https://docs.aws.amazon.com/personalize/latest/dg/limits.html)^ to check if this will work for your use case.').then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      }else if (res.value=='help'){
+        return message(1000,'Some ML problems use columns in a table to predict a number or a category. For example, features describing a house (number of bedrooms, bathrooms etc.) may be used to predict the $ value of the house (a number). On the other hand, predicting a category may involve looking through customer profile data, and providing a "yes" or "no" answer to the question, "should this customer be contacted with a new offer". Lastly, you may want to find similar customers, where each row in your table represents one customer. Finally, you may also want to recommend items or products to customers based on historical interaction data, or data on which customers bought certain products').then(res => tabulardata(botui));
+      }
+    });
+});
+}
+
+function specialtabular(botui,results)
+{
+  if (results.special == 'timeseries')
+  {
+    message(1000,'Does your data satisfy limits as specified in docs of [Amazon Forecast?](https://docs.aws.amazon.com/forecast/latest/dg/limits.html)^').then(() => my2buttons('yes', 'yes', 'no', 'no')).then(res => {
+      if(res.value =='yes'){
+        message(1000, 'Great! Try searching for "Forecast" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)').then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      } else {
+        message(1000, 'No problem, try searching for DeepAR in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)').then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      }});
+  } else if (results.special == 'text') {
+    message(1000,'Does your data satisfy limits as specified in docs of [Amazon Comprehend custom under Document Classification?](https://docs.aws.amazon.com/comprehend/latest/dg/guidelines-and-limits.html)^').then(() => my2buttons('yes', 'yes', 'no', 'no')).then(res => {
+      if(res.value =='yes'){
+        message(1000, 'Great! Try searching for "Comprehend" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)').then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      } else {
+        message(1000, 'No problem, try searching for BlazingText in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)').then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      }});
+
+  } else if (results.special == 'na') {
+    {
+    message(1000,'Is your data less than 5 GB in size and have at least 1000 rows?').then(() => my2buttons('yes', 'yes', 'no', 'no')).then(res => {
+      if(res.value =='yes'){
+        message(1000, 'Great! Try searching for "Autopilot" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)').then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      } else {
+        message(1000, 'No problem, try searching for "XGBoost" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)').then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      }});
+  }
+}
+}
+
+function displaychoices(botui,placeholder,selected_value,choices){
+  
+  return botui.action.select({
+  action: {
+      placeholder : placeholder, 
+      value: selected_value, 
+      multipleselect : true, // Default: false
+      options : choices,
+      button: {
+        icon: 'check',
+        label: 'OK'
+      }
+    }
+})
+}
+
+
+function imagedata(botui)
+{
+  results.datatype = 'image'
+  
+  message(1000,'Are you trying to locate objects within each image, or categorize each image as a whole?').then(res => {
+    my3buttons('Find objects in image','objdetect','classify the entire image','imgclass','I need some more help','help').then(res=> {
+      results.problem = res.value;
+      if(res.value == 'objdetect' || res.value == 'imgclass'){
+        message(1000,'Does your data satisfy limits as specified in docs of [Amazon Rekognition custom labels?](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/limits.html)^').then(() => my2buttons('yes', 'yes', 'no', 'no')).then(res => {
+      if(res.value =='yes'){
+        if(results.problem=='objdetect'){rekmessage='Great! Try searching for "Rekognition object detection" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)'} else {rekmessage='Great! Try searching for "Rekognition classification" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)'}
+        message(1000, rekmessage).then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      } else {
+        if(results.problem=='objdetect'){smmessage='Great! Try searching for "SageMaker object detection" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)'} else {smmessage='Great! Try searching for "SageMaker image classification" in the search box to get started.  <br><br>Start with preprocessing, then training, then inference! !(flag-checkered)'}
+        message(1000, smmessage).then(()=>
+          {if(results.datains3 == 'no'){message(1000, 'Also, since your data is not in S3, search for "upload to s3".')}}).then(res => {return message(1000,'Thank you and good luck with your PoC!');});
+      }});
+      } else {
+        message(1000, 'Typical ML models try to label the image as a whole, or find objects within images. There are several other applications of Machine learning and deep learning with image data but these are the two most popular applications. Here is a picture that might help. <br> [![objvsimg](https://easy-ml-pocs.s3.amazonaws.com/imgvsobj.png)](https://easy-ml-pocs.s3.amazonaws.com/imgvsobj.png)^').then(()=> imagedata(botui));
+      }
+    }); 
+});
+}
+
+
+// Easy set of buttons / botui actions
+
+function message(d=1000,text){
+  return botui.message.bot({delay: d,content: text})
+}
+function my2buttons(text1, value1, text2, value2){
+  return botui.action.button({ // let the user perform an action
+    delay: 1000,
+    action: [
+      {
+        text: text1,
+        value: value1
+      },
+      {
+        text: text2,
+        value: value2
+      }
+    ]
+  })
+}
+
+function my3buttons(text1, value1, text2, value2, text3, value3){
+  return botui.action.button({ // let the user perform an action
+    delay: 1000,
+    action: [
+      {
+        text: text1,
+        value: value1
+      },
+      {
+        text: text2,
+        value: value2
+      },
+      {
+        text: text3,
+        value: value3
+      }
+    ]
+  })
+}
+
+function my4buttons(text1, value1, text2, value2,text3, value3, text4, value4){
+  return botui.action.button({ // let the user perform an action
+    delay: 1000,
+    action: [
+      {
+        text: text1,
+        value: value1
+      },
+      {
+        text: text2,
+        value: value2
+      },
+      {
+        text: text3,
+        value: value3
+      },
+      {
+        text: text4,
+        value: value4
+      }
+    ]
+  })
+}
+
+function my5buttons(text1, value1, text2, value2,text3, value3, text4, value4, text5, value5){
+  return botui.action.button({ // let the user perform an action
+    delay: 1000,
+    action: [
+      {
+        text: text1,
+        value: value1
+      },
+      {
+        text: text2,
+        value: value2
+      },
+      {
+        text: text3,
+        value: value3
+      },
+      {
+        text: text4,
+        value: value4
+      },
+      {
+        text: text5,
+        value: value5
+      }
+    ]
+  })
+}
+
+    </script>
+  </body>
+</html>

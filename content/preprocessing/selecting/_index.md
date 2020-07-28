@@ -2,6 +2,7 @@
 title: "Select, drop or extract Columns"
 date: 2020-02-11T23:23:17-05:00
 draft: false
+algo: [prep]
 ---
 
 ### I am using a SQL database

@@ -2,6 +2,7 @@
 title: "Pneumonia detection from Chest X-ray images using SageMaker"
 date: 2020-02-07T00:15:15-05:00
 draft: false
+algo: sagescene
 ---
 
 ### Introduction

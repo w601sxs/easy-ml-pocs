@@ -2,6 +2,7 @@
 title: "Rekognition Object Detection preprocessing"
 date: 2020-03-22T16:41:13-04:00
 draft: false
+algo: [rekobj]
 ---
 Rekognition Object Detection deals with finding objects within an image. To train your model, Amazon Rekognition Custom Labels require bounding boxes to be drawn around objects and the objects should be labeled in your images.
 

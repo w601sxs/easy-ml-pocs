@@ -6,6 +6,23 @@ theme = "dot"
 # site title
 title = "Easy ML PoCs"
 
+[related]
+	threshold = 1
+	[[related.indices]]
+	name = "algo"
+	weight = 200
+	[[related.indices]]
+	name = "keywords"
+	weight = 200
+	[[related.indices]]
+	name  = "tags"
+	weight = 100
+	[[related.indices]]
+	name  = "date"
+	weight = 1
+	pattern = "2006"
+
+
 
 [markup]
   [markup.highlight]

@@ -2,6 +2,7 @@
 title: "Rekognition Object Detection training"
 date: 2020-03-27T15:05:25-04:00
 draft: False
+algo: [rekobj]
 ---
 
 Make sure you've seen [this](../../preprocessing/rekogobjdetection) if you need help creating a dataset first! If you already have a usable dataset, follow along here to train a custom model:

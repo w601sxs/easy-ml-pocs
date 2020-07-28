@@ -2,6 +2,7 @@
 title: "Personalize training"
 date: 2020-03-04T13:19:02-05:00
 draft: false
+algo: [personalize]
 ---
 
 Make sure you saw [this link](../../preprocessing/personalize) for preprocessing first

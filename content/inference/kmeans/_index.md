@@ -2,6 +2,7 @@
 title: "SageMaker Kmeans inference"
 date: 2020-02-07T00:15:15-05:00
 draft: false
+algo: [kmeans]
 ---
 
 Make sure you read [this](../training/kmeans) on training a model with Kmeans before deploying your model to an endpoint.

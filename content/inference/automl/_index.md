@@ -2,6 +2,7 @@
 title: "Autopilot Inference"
 date: 2020-02-28T10:25:21-06:00
 draft: false
+algo: [autopilot]
 ---
 
 Make sure you saw [this link](../../training/automl) for preprocessing first

@@ -2,6 +2,7 @@
 title: "Upload to s3"
 date: 2020-02-07T01:00:21-05:00
 draft: false
+algo: [prep]
 ---
 
 ## Using Sagemaker session:

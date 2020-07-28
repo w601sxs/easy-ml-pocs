@@ -2,6 +2,7 @@
 title: "Comprehend custom preprocessing"
 date: 2020-02-07T00:14:57-05:00
 draft: false
+algo: [comprehend]
 ---
 
 From Comprehend [Custom Classifier](https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification-training.html), it supports two modes: multi-class and multi-label

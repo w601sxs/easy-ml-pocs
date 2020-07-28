@@ -2,6 +2,7 @@
 title: "SageMaker Image Classification preprocessing"
 date: 2020-02-07T00:15:15-05:00
 draft: false
+algo: [sagescene]
 ---
 
 The Amazon SageMaker image classification algorithm is a supervised learning algorithm that supports multi-label classification. It takes an image as input and outputs one or more labels assigned to that image. It uses a convolutional neural network (ResNet) that can be trained from scratch or trained using transfer learning when a large number of training images are not available.
