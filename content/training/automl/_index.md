@@ -2,6 +2,7 @@
 title: "Autopilot Training"
 date: 2020-02-28T10:25:21-06:00
 draft: false
+algo: [autopilot]
 ---
 
 Make sure you saw [this link](../../preprocessing/automl) for preprocessing first

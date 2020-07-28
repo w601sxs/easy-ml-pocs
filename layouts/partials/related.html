@@ -1,0 +1,11 @@
+{{ "<!-- related -->" | safeHTML }}
+{{ $related := .Site.RegularPages.RelatedIndices . "algo"  }}
+{{ with $related }}
+<h3>Related content:</h3>
+<ul>
+	{{ range . }}
+	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+	{{ end }}
+</ul>
+{{ end }}
+{{ "<!-- /related -->" | safeHTML }}

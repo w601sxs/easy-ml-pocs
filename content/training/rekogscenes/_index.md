@@ -2,6 +2,7 @@
 title: "Rekognition Classification training"
 date: 2020-02-07T00:15:15-05:00
 draft: false
+algo: [rekscene]
 ---
 
 Make sure you've seen [this](../../preprocessing/rekogscenes) if you need help creating a dataset first! If you already have a usable dataset, follow along here to train a custom model:

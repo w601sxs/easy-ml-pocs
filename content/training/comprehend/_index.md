@@ -2,6 +2,7 @@
 title: "Comprehend custom training"
 date: 2020-03-02T17:38:26-05:00
 draft: false
+algo: [comprehend]
 ---
 
 Make sure you saw [this link](../../preprocessing/comprehend) for preprocessing first

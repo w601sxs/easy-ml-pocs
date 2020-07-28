@@ -29,6 +29,8 @@
 
   {{ if .IsHome }}
   {{- partial "chatpartial.html" . -}}
+  {{ else }}
+  {{- partial "nbpartial.html" . -}}
   {{ end }}
 </body>
 

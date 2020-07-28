@@ -2,6 +2,7 @@
 title: "Rekognition Object Detection inference"
 date: 2020-03-27T11:52:53-04:00
 draft: False
+algo: [rekobj]
 ---
 
 > Navigate to the project you trained your model under, wait for the **status** to show ```TRAINING_COMPLETE``` and then click the on the model **Name**  of the trained model:

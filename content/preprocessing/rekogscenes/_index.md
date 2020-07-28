@@ -2,6 +2,7 @@
 title: "Rekognition Classification preprocessing"
 date: 2020-02-07T00:15:15-05:00
 draft: false
+algo: [rekscene]
 ---
 
 Rekognition classification deals with learning image-level tags. To train your model, Amazon Rekognition Custom Labels require the images in a dataset to be labeled with information about the scenes or concepts in your images.

@@ -2,6 +2,7 @@
 title: "SageMaker Object Detection inference"
 date: 2020-03-27T18:01:30-04:00
 draft: False
+algo: [sageobj]
 ---
 
 Make sure you have trained your model as outlined [here](../../training/sageobjdetection)

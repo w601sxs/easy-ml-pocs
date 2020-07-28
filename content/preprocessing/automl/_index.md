@@ -2,6 +2,7 @@
 title: "Autopilot preprocessing"
 date: 2020-02-26T11:20:21-05:00
 draft: False
+algo: [autopilot]
 ---
 
 SageMaker Autopilot first inspects your data set, and runs a number of candidates to figure out the optimal combination of data preprocessing steps, machine learning algorithms and hyperparameters.

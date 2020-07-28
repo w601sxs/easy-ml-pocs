@@ -2,6 +2,7 @@
 title: "Kmeans preprocessing"
 date: 2020-03-02T17:46:34-05:00
 draft: false
+algo: [kmeans]
 ---
 
 Per the [documentation](https://docs.aws.amazon.com/sagemaker/latest/dg/k-means.html#km-inputoutput), "For training, the k-means algorithm expects data to be provided in the train channel (recommended S3DataDistributionType=ShardedByS3Key), with an optional test channel (recommended S3DataDistributionType=FullyReplicated) to score the data on. Both recordIO-wrapped-protobuf and CSV formats are supported for training. You can use either File mode or Pipe mode to train models on data that is formatted as recordIO-wrapped-protobuf or as CSV."

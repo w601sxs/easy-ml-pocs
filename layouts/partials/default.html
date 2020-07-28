@@ -14,6 +14,8 @@
           </ul>
         </div>
       </div>
+
+
       <div class="col-lg-9">
         <div class="p-5 bg-white">
           <h2 class="mb-5">{{ .Title }}</h2>
@@ -26,7 +28,28 @@
             </ul>
           </div>
           {{ end }}
+          
           <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on {{ .Lastmod.Format "02 Jan 2006" }}</p>
+
+          {{ if isset .Params "algo" }}
+
+          <div>
+          <br>
+          <h4>Related content:</h4>
+          <ul>
+          {{ $num_to_show := .Site.Params.related_content_limit | default 10 }}
+          {{ range first $num_to_show (where (where .Site.Pages ".Params.algo" "intersect" .Params.algo) "Permalink" "!=" .Permalink) }}
+          <li ><a href="{{ .RelPermalink }}">&nbsp; &#9758; &nbsp;&nbsp; {{ .Title }}</a> &ndash; <i>{{ .ReadingTime }} min read</i>
+          {{ end }}
+          </ul>
+          <br>
+          <hr>
+          </div>
+
+          {{ end }}
+
+
+
           <nav class="pagination mt-3">
             <!-- Next prev page -->
             {{ $currentNode := . }}
@@ -68,6 +91,8 @@
           </nav>
         </div>
       </div>
+
+
     </div>
   </div>
 </section>
@@ -108,4 +133,10 @@
 {{ end }}
 {{ end }}
 {{ end }}
+<<<<<<< HEAD
 
+=======
+<script src = "/js/add-on.js"></script>
+<script src = "/js/add2notebook.js"></script>
+<link href="/js/add-on.css" rel="stylesheet" type="css" crossorigin="anonymous">
+>>>>>>> add2notebook

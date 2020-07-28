@@ -2,6 +2,7 @@
 title: "Forecast training"
 date: 2020-03-11T14:26:40-04:00
 draft: false
+algo: [forecast]
 ---
 
 Make sure you saw [this link](../../preprocessing/forecast) for preprocessing first

@@ -2,6 +2,7 @@
 title: "DeepAR preprocessing"
 date: 2020-02-26T10:52:58-05:00
 draft: false
+algo: [deepar]
 ---
 
 ### Prepare data
