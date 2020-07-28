@@ -30,6 +30,8 @@
           
           <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on {{ .Lastmod.Format "02 Jan 2006" }}</p>
 
+          {{ if isset .Params "algo" }}
+
           <div>
           <br>
           <h4>Related content:</h4>
@@ -42,6 +44,8 @@
           <br>
           <hr>
           </div>
+
+          {{ end }}
 
 
 
